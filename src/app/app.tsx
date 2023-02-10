@@ -3,20 +3,22 @@ import {classNames} from 'shared/lib/class-names/class-names';
 import './styles/index.scss';
 import {AppRouter} from 'app/providers/router';
 import {Navbar} from 'widgets/navbar';
+import {Sidebar} from 'widgets/sidebar';
+import {Suspense} from 'react';
 
 function App(): JSX.Element {
 
-  const {theme, toggleTheme} = useTheme();
+  const {theme} = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Navbar/>
-      <button
-        onClick={toggleTheme}
-      >
-        Switch theme
-      </button>
-      <AppRouter/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Navbar/>
+        <div className={'content-page'}>
+          <Sidebar/>
+          <AppRouter/>
+        </div>
+      </Suspense>
     </div>
   );
 }
