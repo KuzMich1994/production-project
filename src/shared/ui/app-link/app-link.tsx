@@ -1,7 +1,7 @@
-import {classNames} from 'shared/lib/class-names/class-names';
+import { classNames } from 'shared/lib/class-names/class-names';
+import { Link, LinkProps } from 'react-router-dom';
+import { PropsWithChildren } from 'react';
 import s from './app-link.module.scss';
-import {Link, LinkProps} from 'react-router-dom';
-import {PropsWithChildren} from 'react';
 
 export enum AppLinkTheme {
   PRIMARY = 'primary',
@@ -13,8 +13,9 @@ interface AppLinkProps extends LinkProps{
   theme?: AppLinkTheme;
 }
 
-export function AppLink({className, children, to, theme = AppLinkTheme.PRIMARY, ...props}: PropsWithChildren<AppLinkProps>): JSX.Element {
-
+export function AppLink({
+  className, children, to, theme = AppLinkTheme.PRIMARY, ...props
+}: PropsWithChildren<AppLinkProps>): JSX.Element {
   return (
     <Link
       to={to}

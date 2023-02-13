@@ -1,28 +1,27 @@
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import {BuildOptions} from './types/config';
+import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-
   const babelLoader = {
     test: /\.(js|jsx|ts|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
         plugins: [
           [
-            "i18next-extract",
+            'i18next-extract',
             {
-              "nsSeparator": "~",
+              nsSeparator: '~',
               locales: ['ru', 'en'],
               keyAsDefaultValue: true,
             },
           ],
-        ]
-      }
-    }
+        ],
+      },
+    },
   };
 
   const svgLoader = {
@@ -31,13 +30,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   };
 
   const fileLoader = {
-      test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-        },
-      ],
-    };
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  };
 
   const typescriptLoader = {
     test: /\.tsx?$/,
@@ -56,7 +55,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             auto: (resPath: string) => resPath.includes('.module.'),
             localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
           },
-        }
+        },
       },
       'sass-loader',
     ],

@@ -1,4 +1,3 @@
-
 export {
-    AppRouter,
+  AppRouter,
 } from './ui/app-router';
