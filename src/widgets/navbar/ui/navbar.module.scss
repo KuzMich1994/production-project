@@ -6,12 +6,13 @@
   align-items: center;
   padding: 20px;
 
-  &__Links {
+  &__links {
     margin-left: auto;
   }
 
-  &__Link {
+  &__link {
     margin-right: 15px;
+
     &:last-child {
       margin-right: 0;
     }

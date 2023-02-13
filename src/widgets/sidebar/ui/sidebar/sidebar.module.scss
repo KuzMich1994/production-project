@@ -5,16 +5,18 @@
   background-color: var(--inverted-bg-color);
   transition: width 0.3s ease;
 
-  &__Switchers {
+  &__switchers {
     position: absolute;
     bottom: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
+
     & > *:nth-child(even) {
       margin-left: 15px;
     }
   }
+
   &_collapsed {
     width: var(--sidebar-width-collapsed);
   }
