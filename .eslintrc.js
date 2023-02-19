@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'react-app',
@@ -41,6 +42,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'default-case': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'max-len': ['error', { ignoreComments: true, code: 100, ignoreStrings: true }],
   },
   globals: {
     __IS_DEV__: true,
