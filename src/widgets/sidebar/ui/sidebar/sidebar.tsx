@@ -17,8 +17,13 @@ export function Sidebar({ className }: SidebarProps): JSX.Element {
   const handleToggle = () => setCollapsed((prevState) => !prevState);
 
   return (
-    <div className={classNames(s.sidebar, { [s.sidebar_collapsed]: collapsed }, [className])}>
-      <Button onClick={handleToggle}>{collapsed ? t('Развернуть') : t('Свернуть')}</Button>
+    <div data-testid="sidebar" className={classNames(s.sidebar, { [s.sidebar_collapsed]: collapsed }, [className])}>
+      <Button
+        data-testid="sidebar-toggle"
+        onClick={handleToggle}
+      >
+        {collapsed ? t('Развернуть') : t('Свернуть')}
+      </Button>
       <div className={s.sidebar__switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
