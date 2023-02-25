@@ -4,12 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'react-app',
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:i18next/recommended',
-  ],
+  extends: ['react-app', 'plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -18,19 +13,19 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
-    indent: [2, 2, { SwitchCase: 1 }],
+    indent: [2, 2, {
+      SwitchCase: 1,
+    }],
     'react/jsx-indent': [2, 2],
     'react/react-in-jsx-scope': 'off',
     'no-undef': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': [2, {
+      extensions: ['.js', '.jsx', '.tsx'],
+    }],
     'no-unused-vars': 'warn',
     '@typescript-eslint/no-unused-vars': [2],
     'react/require-default-props': 'off',
@@ -41,8 +36,15 @@ module.exports = {
     'import/extensions': 'off',
     'no-underscore-dangle': 'off',
     'default-case': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
-    'max-len': ['error', { ignoreComments: true, code: 100, ignoreStrings: true }],
+    'i18next/no-literal-string': ['error', {
+      markupOnly: true,
+    }],
+    'max-len': ['error', {
+      ignoreComments: true,
+      code: 100,
+      ignoreStrings: true,
+    }],
+    'react/function-component-definition': 'off',
   },
   globals: {
     __IS_DEV__: true,
