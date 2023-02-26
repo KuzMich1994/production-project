@@ -45,6 +45,7 @@ module.exports = {
       ignoreStrings: true,
     }],
     'react/function-component-definition': 'off',
+    'linebreak-style': 0,
   },
   globals: {
     __IS_DEV__: true,
