@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/button/button';
+import { Button, ButtonTheme } from 'shared/ui/button/button';
 import s from './page-error.module.scss';
 
 interface PageErrorProps {
@@ -18,7 +18,7 @@ export function PageError({ className }: PageErrorProps): JSX.Element {
     <ul className={classNames(s.pageError, {}, [className])}>
       <p>{t('Произошла непредвиденная ошибка')}</p>
       <Button
-        theme={ThemeButton.CLEAR}
+        theme={ButtonTheme.CLEAR}
         onClick={reloadPage}
       >
         {t('Обновить страницу')}
