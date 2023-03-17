@@ -7,6 +7,7 @@
   z-index: 1;
   opacity: 0;
   pointer-events: none;
+  color: var(--inverted-primary-color);
 }
 
 .overlay {
@@ -25,6 +26,11 @@
   background-color: var(--bg-color);
   transition: transform 0.3s;
   transform: scale(0.5);
+}
+
+.modal.dark {
+  --bg-color: #090949;
+  --inverted-primary-color: #04ff04;
 }
 
 .opened {
