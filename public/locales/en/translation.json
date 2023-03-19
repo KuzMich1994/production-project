@@ -10,5 +10,7 @@
   "Обновить страницу": "Refresh the page",
   "О сайте": "About",
   "lng": "En",
-  "Войти": "Войти"
+  "Войти": "Войти",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }
