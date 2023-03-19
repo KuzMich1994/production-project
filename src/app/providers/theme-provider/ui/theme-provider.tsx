@@ -1,4 +1,6 @@
-import { ReactNode, useMemo, useState } from 'react';
+import {
+  ReactNode, useEffect, useMemo, useState,
+} from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/theme-context';
 
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
@@ -15,6 +17,10 @@ function ThemeProvider({ children, initialTheme }: ThemeProviderProps) {
     theme,
     setTheme,
   }), [theme]);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <ThemeContext.Provider

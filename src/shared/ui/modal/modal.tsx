@@ -17,7 +17,6 @@ export function Modal({
 }: PropsWithChildren<ModalProps>): JSX.Element {
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
-  const { theme } = useTheme();
 
   const onContentClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -53,7 +52,6 @@ export function Modal({
   const mods: Record<string, boolean> = {
     [s.opened]: isOpen,
     [s.isClosing]: isClosing,
-    [s[theme]]: true,
   };
 
   return (

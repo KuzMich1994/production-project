@@ -28,11 +28,6 @@
   transform: scale(0.5);
 }
 
-.modal.dark {
-  --bg-color: #090949;
-  --inverted-primary-color: #04ff04;
-}
-
 .opened {
   z-index: var(--modal-z-index);
   opacity: 1;

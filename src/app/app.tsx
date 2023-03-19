@@ -1,4 +1,3 @@
-import { useTheme } from 'app/providers/theme-provider';
 import { classNames } from 'shared/lib/class-names/class-names';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/navbar';
@@ -6,10 +5,8 @@ import { Sidebar } from 'widgets/sidebar';
 import { Suspense } from 'react';
 
 function App(): JSX.Element {
-  const { theme } = useTheme();
-
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={classNames('app', {}, [])}>
       <Suspense fallback={<div>Loading...</div>}>
         <Navbar />
         <div className="content-page">
