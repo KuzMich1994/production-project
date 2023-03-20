@@ -3,7 +3,6 @@ import React, {
   PropsWithChildren, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'shared/ui/portal/portal';
-import { useTheme } from 'app/providers/theme-provider';
 import s from './modal.module.scss';
 
 interface ModalProps {
