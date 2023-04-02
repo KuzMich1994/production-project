@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/class-names/class-names';
-import { Modal } from 'shared/ui/modal/modal';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/button/button';
 import { useCallback, useState } from 'react';
