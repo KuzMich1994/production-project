@@ -1,0 +1,52 @@
+.input-container {
+  display: flex;
+}
+
+.input {
+  margin-right: 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  caret-color: transparent;
+  color: transparent;
+  text-shadow: 0 0 0 var(--inverted-primary-color);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.placeholder {
+  margin-right: 5px;
+  color: var(--inverted-primary-color);
+}
+
+.caret-container {
+  flex-grow: 1;
+  position: relative;
+}
+
+.caret {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 9px;
+  background: var(--inverted-primary-color);
+  animation: blink 0.7s forwards infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.01;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
