@@ -10,8 +10,11 @@
   "Обновить страницу": "Refresh the page",
   "О сайте": "About",
   "lng": "En",
-  "Войти": "Войти",
+  "Войти": "Login",
   "Increment": "Increment",
   "Decrement": "Decrement",
-  "Введите пароль": "Введите пароль"
+  "Введите пароль": "Insert password",
+  "Форма авторизации": "Auth form",
+  "Введите username": "Insert username",
+  "Вы ввели не верный логин или пароль": "Incorrect login or password"
 }

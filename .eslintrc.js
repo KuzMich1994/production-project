@@ -46,7 +46,7 @@ module.exports = {
     }],
     'max-len': ['error', {
       ignoreComments: true,
-      code: 100,
+      code: 120,
       ignoreStrings: true,
     }],
     'react/function-component-definition': 'off',

@@ -27,6 +27,7 @@ export function Button({
 }: PropsWithChildren<ButtonProps>): JSX.Element {
   const mods: Record<string, boolean> = {
     [s.square]: square,
+    [s.disabled]: props.disabled,
   };
 
   return (
