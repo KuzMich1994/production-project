@@ -55,7 +55,11 @@ export function Navbar({ className }: NavbarProps): JSX.Element {
           {t('Войти')}
         </Button>
       </div>
-      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      {
+        isAuthModal && (
+          <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+        )
+      }
     </div>
   );
 }
