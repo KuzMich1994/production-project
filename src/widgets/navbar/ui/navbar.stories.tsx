@@ -33,7 +33,7 @@ Authorize.decorators = [StoreDecorator({
   user: {
     authData: {
       username: 'user1',
-      id: 1,
+      id: '1',
     },
   },
 })];
