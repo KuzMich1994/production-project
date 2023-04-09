@@ -1,11 +1,12 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { Link, LinkProps } from 'react-router-dom';
-import { PropsWithChildren } from 'react';
+import { memo, PropsWithChildren } from 'react';
 import s from './app-link.module.scss';
 
 export enum AppLinkTheme {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
+  PRIMARY_INVERTED = 'primaryInverted',
 }
 
 interface AppLinkProps extends LinkProps{
@@ -13,7 +14,7 @@ interface AppLinkProps extends LinkProps{
   theme?: AppLinkTheme;
 }
 
-export function AppLink({
+function AppLink({
   className, children, to, theme = AppLinkTheme.PRIMARY, ...props
 }: PropsWithChildren<AppLinkProps>): JSX.Element {
   return (
@@ -26,3 +27,5 @@ export function AppLink({
     </Link>
   );
 }
+
+export default memo(AppLink);

@@ -19,7 +19,7 @@ export function LoginModal({ className, onClose, isOpen }: LoginModalProps): JSX
       isOpen={isOpen}
     >
       <Suspense fallback={<Loader />}>
-        <LoginFormAsync />
+        <LoginFormAsync onSuccess={onClose} />
       </Suspense>
     </Modal>
   );

@@ -3,9 +3,10 @@
 @import "./themes/dark";
 @import "./variables/global";
 
-body {
+.app,
+.app-modal {
   font: var(--font-m);
-  color: var(--inverted-primary-color);
+  color: var(--primary-color);
 }
 
 .app {

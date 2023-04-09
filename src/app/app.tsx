@@ -3,10 +3,12 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/navbar';
 import { Sidebar } from 'widgets/sidebar';
 import { Suspense, useEffect } from 'react';
-import { useAppDispatch } from 'app/providers/store-provider';
 import { userActions } from 'entities/user';
+import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
+import { useTheme } from 'app/providers/theme-provider';
 
 function App(): JSX.Element {
+  const { theme } = useTheme();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -14,8 +16,8 @@ function App(): JSX.Element {
   }, [dispatch]);
 
   return (
-    <div className={classNames('app', {}, [])}>
-      <Suspense fallback={<div>Loading...</div>}>
+    <div className={classNames('app', {}, [theme])}>
+      <Suspense fallback="">
         <Navbar />
         <div className="content-page">
           <Sidebar />

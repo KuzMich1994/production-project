@@ -1,9 +1,10 @@
 import { classNames } from 'shared/lib/class-names/class-names';
-import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, memo, PropsWithChildren } from 'react';
 import s from './button.module.scss';
 
 export enum ButtonTheme {
   CLEAR = 'clear',
+  CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
@@ -22,7 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   buttonSize?: ButtonSize;
 }
 
-export function Button({
+function Button({
   className, children, theme, square, buttonSize = ButtonSize.M, ...props
 }: PropsWithChildren<ButtonProps>): JSX.Element {
   const mods: Record<string, boolean> = {
@@ -40,3 +41,5 @@ export function Button({
     </button>
   );
 }
+
+export default memo(Button);

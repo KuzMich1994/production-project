@@ -25,25 +25,6 @@
   align-items: center;
 }
 
-.link {
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-
-  & > *:nth-child(even) {
-    margin-left: 5px;
-  }
-}
-
-.link-text {
-  opacity: 1;
-  transition: all 0.3s;
-}
-
-.link-icon {
-  fill: currentcolor;
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
@@ -57,11 +38,6 @@
     & > *:nth-child(odd) {
       margin-bottom: 10px;
     }
-  }
-
-  .link-text {
-    opacity: 0;
-    width: 0;
   }
 }
 

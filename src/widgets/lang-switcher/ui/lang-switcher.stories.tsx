@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator/theme-decorator';
 import { Theme } from 'app/providers/theme-provider';
-import { LangSwitcher } from 'widgets/lang-switcher';
+import LangSwitcher from './lang-switcher';
 
 export default {
   title: 'widget/lang-switcher',

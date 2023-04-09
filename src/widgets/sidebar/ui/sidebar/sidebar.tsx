@@ -1,24 +1,24 @@
 import { classNames } from 'shared/lib/class-names/class-names';
-import { useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'widgets/theme-switcher';
 import { LangSwitcher } from 'widgets/lang-switcher';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/button/button';
-import { useTranslation } from 'react-i18next';
-import { AppLink, AppLinkTheme } from 'shared/ui/app-link/app-link';
-import { RoutePath } from 'shared/config/route-config/route-config';
-import AboutIcon from 'shared/assets/icons/about.svg';
-import HomeIcon from 'shared/assets/icons/home.svg';
+import Button, { ButtonSize, ButtonTheme } from 'shared/ui/button/button';
+import { SidebarItemsList } from '../../model/items';
 import s from './sidebar.module.scss';
+import SidebarItem from '../sidebar-item/sidebar-item';
 
 interface SidebarProps {
   className?: string;
 }
 
-export function Sidebar({ className }: SidebarProps): JSX.Element {
+function Sidebar({ className }: SidebarProps): JSX.Element {
   const [collapsed, setCollapsed] = useState(false);
-  const { t } = useTranslation();
 
   const handleToggle = () => setCollapsed((prevState) => !prevState);
+
+  const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+    <SidebarItem collapsed={collapsed} key={item.path} item={item} />
+  )), [collapsed]);
 
   return (
     <div data-testid="sidebar" className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
@@ -33,22 +33,9 @@ export function Sidebar({ className }: SidebarProps): JSX.Element {
         {collapsed ? '>' : '<'}
       </Button>
       <div className={s.navLinks}>
-        <AppLink
-          theme={AppLinkTheme.PRIMARY}
-          className={classNames(s.link)}
-          to={RoutePath.main}
-        >
-          <HomeIcon className={s.linkIcon} />
-          <span className={s.linkText}>{t('Главная')}</span>
-        </AppLink>
-        <AppLink
-          theme={AppLinkTheme.PRIMARY}
-          className={classNames(s.link)}
-          to={RoutePath.about}
-        >
-          <AboutIcon className={s.linkIcon} />
-          <span className={s.linkText}>{t('О сайте')}</span>
-        </AppLink>
+        {
+          itemsList
+        }
       </div>
       <div className={s.switchers}>
         <ThemeSwitcher />
@@ -57,3 +44,5 @@ export function Sidebar({ className }: SidebarProps): JSX.Element {
     </div>
   );
 }
+
+export default memo(Sidebar);

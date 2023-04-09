@@ -1,18 +1,18 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/button/button';
-import { useCallback, useState } from 'react';
+import Button, { ButtonTheme } from 'shared/ui/button/button';
+import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/auth-by-username';
 import { useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/user';
-import { useAppDispatch } from 'app/providers/store-provider';
+import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import s from './navbar.module.scss';
 
 interface NavbarProps {
   className?: string;
 }
 
-export function Navbar({ className }: NavbarProps): JSX.Element {
+function Navbar({ className }: NavbarProps): JSX.Element {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
@@ -35,7 +35,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element {
       <div className={classNames(s.navbar, {}, [className])}>
         <div className={classNames(s.navbar__links)}>
           <Button
-            theme={ButtonTheme.CLEAR}
+            theme={ButtonTheme.CLEAR_INVERTED}
             onClick={onLogout}
           >
             {t('Выйти')}
@@ -49,7 +49,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element {
     <div className={classNames(s.navbar, {}, [className])}>
       <div className={classNames(s.navbar__links)}>
         <Button
-          theme={ButtonTheme.CLEAR}
+          theme={ButtonTheme.CLEAR_INVERTED}
           onClick={onShowModal}
         >
           {t('Войти')}
@@ -63,3 +63,5 @@ export function Navbar({ className }: NavbarProps): JSX.Element {
     </div>
   );
 }
+
+export default memo(Navbar);

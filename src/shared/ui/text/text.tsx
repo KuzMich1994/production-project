@@ -1,4 +1,5 @@
 import { classNames } from 'shared/lib/class-names/class-names';
+import { memo } from 'react';
 import s from './text.module.scss';
 
 export enum TextTheme {
@@ -13,7 +14,7 @@ interface TextProps {
   theme?: TextTheme,
 }
 
-export function Text({
+function Text({
   className, text, title, theme = TextTheme.PRIMARY,
 }: TextProps): JSX.Element {
   return (
@@ -27,3 +28,5 @@ export function Text({
     </div>
   );
 }
+
+export default memo(Text);
