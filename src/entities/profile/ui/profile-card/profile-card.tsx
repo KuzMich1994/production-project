@@ -1,23 +1,43 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { getProfileData } from 'entities/profile/model/selectors/get-profile-data/get-profile-data';
-import { getProfileIsLoading } from 'entities/profile/model/selectors/get-profile-is-loading/get-profile-is-loading';
-import { getProfileError } from 'entities/profile/model/selectors/get-profile-error/get-profile-error';
-import Text from 'shared/ui/text/text';
+import Text, { TextTheme } from 'shared/ui/text/text';
 import Button, { ButtonTheme } from 'shared/ui/button/button';
 import Input from 'shared/ui/input/input';
+import { Loader } from 'shared/ui/loader/loader';
 import s from './profile-card.module.scss';
+import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
   className?: string;
+  data?: Profile;
+  isLoading?: boolean;
+  error?: string;
 }
 
-export function ProfileCard({ className }: ProfileCardProps): JSX.Element {
+export function ProfileCard({
+  className, data, isLoading, error,
+}: ProfileCardProps): JSX.Element {
   const { t } = useTranslation('profile');
-  const data = useSelector(getProfileData);
-  const isLoading = useSelector(getProfileIsLoading);
-  const error = useSelector(getProfileError);
+
+  if (isLoading) {
+    return (
+      <div className={classNames(s.profileCard, { [s.loading]: true }, [className])}>
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={classNames(s.profileCard, { [s.error]: true }, [className])}>
+        <Text
+          theme={TextTheme.ERROR}
+          title={t('Произошла ошибка при загрузке профиля').toString()}
+          text={t('Попробуйте обновить страницу').toString()}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(s.profileCard, {}, [className])}>
