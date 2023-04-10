@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/class-names/class-names';
+import { classNames, Mods } from 'shared/lib/class-names/class-names';
 import { ButtonHTMLAttributes, memo, PropsWithChildren } from 'react';
 import s from './button.module.scss';
 
@@ -24,9 +24,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 function Button({
-  className, children, theme, square, buttonSize = ButtonSize.M, ...props
+  className, children, theme = ButtonTheme.OUTLINE, square, buttonSize = ButtonSize.M, ...props
 }: PropsWithChildren<ButtonProps>): JSX.Element {
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [s.square]: square,
     [s.disabled]: props.disabled,
   };

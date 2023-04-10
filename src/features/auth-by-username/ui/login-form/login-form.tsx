@@ -52,22 +52,22 @@ function LoginForm({ className, onSuccess }: LoginFormProps) {
       <div
         className={classNames(s.loginForm, {}, [className])}
       >
-        <Text title={t('Форма авторизации')} />
+        <Text title={t('Форма авторизации').toString()} />
         {
           error && (
-            <Text text={t('Вы ввели не верный логин или пароль')} theme={TextTheme.ERROR} />
+            <Text text={t('Вы ввели не верный логин или пароль').toString()} theme={TextTheme.ERROR} />
           )
         }
         <Input
           autofocus
-          placeholder={t('Введите username')}
+          placeholder={t('Введите username').toString()}
           type="text"
           className={s.input}
           onChange={onChangeUsername}
           value={username}
         />
         <Input
-          placeholder={t('Введите пароль')}
+          placeholder={t('Введите пароль').toString()}
           type="text"
           className={s.input}
           onChange={onChangePassword}

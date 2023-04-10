@@ -7,7 +7,7 @@ import s from './sidebar-item.module.scss';
 import { SidebarItemType } from '../../model/items';
 
 interface SidebarItemProps {
-  item?: SidebarItemType;
+  item: SidebarItemType;
   collapsed: boolean;
 }
 

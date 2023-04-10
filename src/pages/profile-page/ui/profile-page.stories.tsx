@@ -22,6 +22,10 @@ Light.decorators = [StoreDecorator({
   profile: {
     readonly: true,
     isLoading: false,
+    data: {
+      first: 'Sergey',
+      lastName: 'Kuzmichev',
+    },
   },
 })];
 
@@ -32,5 +36,9 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
   profile: {
     readonly: true,
     isLoading: false,
+    data: {
+      first: 'Sergey',
+      lastName: 'Kuzmichev',
+    },
   },
 })];

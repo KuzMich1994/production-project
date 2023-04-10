@@ -13,9 +13,7 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-function Template(args: ComponentStory<typeof Button>): JSX.Element {
-  return <Button {...args} />;
-}
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -73,7 +71,7 @@ Square.args = {
   children: '>',
   theme: ButtonTheme.BACKGROUND_INVERTED,
   square: true,
-  size: ButtonSize.M,
+  buttonSize: ButtonSize.M,
 };
 
 export const SquareL = Template.bind({});
@@ -81,7 +79,7 @@ SquareL.args = {
   children: '>',
   theme: ButtonTheme.BACKGROUND_INVERTED,
   square: true,
-  size: ButtonSize.L,
+  buttonSize: ButtonSize.L,
 };
 
 export const SquareXL = Template.bind({});
@@ -89,28 +87,28 @@ SquareXL.args = {
   children: '>',
   theme: ButtonTheme.BACKGROUND_INVERTED,
   square: true,
-  size: ButtonSize.XL,
+  buttonSize: ButtonSize.XL,
 };
 
 export const ButtonM = Template.bind({});
 ButtonM.args = {
   children: 'Button medium',
   theme: ButtonTheme.BACKGROUND_INVERTED,
-  size: ButtonSize.XL,
+  buttonSize: ButtonSize.M,
 };
 
 export const ButtonL = Template.bind({});
 ButtonL.args = {
   children: 'Button Large',
   theme: ButtonTheme.BACKGROUND_INVERTED,
-  size: ButtonSize.XL,
+  buttonSize: ButtonSize.L,
 };
 
 export const ButtonXL = Template.bind({});
 ButtonXL.args = {
   children: 'Button Extra Large',
   theme: ButtonTheme.BACKGROUND_INVERTED,
-  size: ButtonSize.XL,
+  buttonSize: ButtonSize.XL,
 };
 
 export const Disabled = Template.bind({});

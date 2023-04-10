@@ -1,5 +1,6 @@
-import { classNames } from 'shared/lib/class-names/class-names';
+import { classNames, Mods } from 'shared/lib/class-names/class-names';
 import React, {
+  MutableRefObject,
   PropsWithChildren, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'shared/ui/portal/portal';
@@ -15,10 +16,10 @@ interface ModalProps {
 
 export function Modal({
   className, children, isOpen, onClose, lazy,
-}: PropsWithChildren<ModalProps>): JSX.Element {
+}: PropsWithChildren<ModalProps>): JSX.Element | null {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const { theme } = useTheme();
 
   const onContentClick = (e: React.MouseEvent) => {
@@ -58,7 +59,7 @@ export function Modal({
     };
   }, [isOpen, onKeyDown]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [s.opened]: isOpen,
     [s.isClosing]: isClosing,
   };

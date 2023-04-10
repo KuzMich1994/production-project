@@ -1,0 +1,24 @@
+.profile-card {
+  padding: 20px;
+  border: 2px solid var(--inverted-bg-color);
+}
+
+.header {
+  display: flex;
+}
+
+.edit-btn {
+  margin-left: auto;
+}
+
+.data {
+  margin-top: 30px;
+}
+
+.input {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -13,9 +13,7 @@ export default {
   },
 } as ComponentMeta<typeof Input>;
 
-function Template(args: ComponentStory<typeof Input>): JSX.Element {
-  return <Input {...args} />;
-}
+const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
