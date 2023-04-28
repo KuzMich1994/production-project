@@ -17,7 +17,11 @@ function Sidebar({ className }: SidebarProps): JSX.Element {
   const handleToggle = () => setCollapsed((prevState) => !prevState);
 
   const itemsList = useMemo(() => SidebarItemsList.map((item) => (
-    <SidebarItem collapsed={collapsed} key={item.path} item={item} />
+    <SidebarItem
+      collapsed={collapsed}
+      key={item.path}
+      item={item}
+    />
   )), [collapsed]);
 
   return (

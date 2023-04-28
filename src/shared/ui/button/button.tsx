@@ -6,6 +6,7 @@ export enum ButtonTheme {
   CLEAR = 'clear',
   CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
+  OUTLINE_RED = 'outline-red',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
 }
@@ -23,19 +24,26 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   buttonSize?: ButtonSize;
 }
 
-function Button({
-  className, children, theme = ButtonTheme.OUTLINE, square, buttonSize = ButtonSize.M, ...props
-}: PropsWithChildren<ButtonProps>): JSX.Element {
+function Button(props: PropsWithChildren<ButtonProps>): JSX.Element {
+  const {
+    className,
+    children,
+    theme = ButtonTheme.OUTLINE,
+    square,
+    buttonSize = ButtonSize.M,
+    ...otherProps
+  } = props;
+
   const mods: Mods = {
     [s.square]: square,
-    [s.disabled]: props.disabled,
+    [s.disabled]: otherProps.disabled,
   };
 
   return (
     <button
       type="button"
       className={classNames(s.button, mods, [className, s[theme], s[buttonSize]])}
-      {...props}
+      {...otherProps}
     >
       {children}
     </button>

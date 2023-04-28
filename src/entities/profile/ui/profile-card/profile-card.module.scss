@@ -3,18 +3,6 @@
   border: 2px solid var(--inverted-bg-color);
 }
 
-.header {
-  display: flex;
-}
-
-.edit-btn {
-  margin-left: auto;
-}
-
-.data {
-  margin-top: 30px;
-}
-
 .input {
   margin-bottom: 10px;
 
@@ -28,4 +16,13 @@
   align-items: center;
   justify-content: center;
   height: 300px;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.editing {
+  border-color: var(--inverted-primary-color);
 }

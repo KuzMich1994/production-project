@@ -1,7 +1,10 @@
-import { ProfileCard } from 'entities/profile/ui/profile-card/profile-card';
+import { ProfileCard } from './ui/profile-card/profile-card';
+import { getProfileReadonly } from './model/selectors/get-profile-readonly/get-profile-readonly';
+import { getProfileForm } from './model/selectors/get-profile-form/get-profile-form';
+import { updateProfileData } from './model/services/update-profile-data/update-profile-data';
 import { fetchProfileData } from './model/services/fetch-profile-data/fetch-profile-data';
-import { ProfileSchema, Profile } from './model/types/profile';
-import { profileReducer, profileActions } from './model/slice/profile-slice';
+import { Profile, ProfileSchema } from './model/types/profile';
+import { profileActions, profileReducer } from './model/slice/profile-slice';
 import { getProfileError } from './model/selectors/get-profile-error/get-profile-error';
 import { getProfileIsLoading } from './model/selectors/get-profile-is-loading/get-profile-is-loading';
 import { getProfileData } from './model/selectors/get-profile-data/get-profile-data';
@@ -16,4 +19,7 @@ export {
   getProfileError,
   getProfileData,
   getProfileIsLoading,
+  getProfileReadonly,
+  getProfileForm,
+  updateProfileData,
 };

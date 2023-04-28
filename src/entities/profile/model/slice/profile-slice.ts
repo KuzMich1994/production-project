@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { updateProfileData } from '../services/update-profile-data/update-profile-data';
 import { fetchProfileData } from '../services/fetch-profile-data/fetch-profile-data';
 import { Profile, ProfileSchema } from '../types/profile';
 
@@ -7,13 +8,26 @@ const initialState: ProfileSchema = {
   isLoading: false,
   error: undefined,
   data: undefined,
+  form: undefined,
 };
 
 const profileSlice = createSlice({
   initialState,
   name: 'PROFILE',
   reducers: {
-
+    setReadonly: (state, action: PayloadAction<boolean>) => {
+      state.readonly = action.payload;
+    },
+    updateProfile: (state, action: PayloadAction<Profile>) => {
+      state.form = {
+        ...state.data,
+        ...action.payload,
+      };
+    },
+    canselEditProfile: (state) => {
+      state.readonly = true;
+      state.form = state.data;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -25,8 +39,24 @@ const profileSlice = createSlice({
         state.error = undefined;
         state.isLoading = false;
         state.data = action.payload;
+        state.form = action.payload;
       })
       .addCase(fetchProfileData.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(updateProfileData.pending, (state) => {
+        state.error = undefined;
+        state.isLoading = true;
+      })
+      .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
+        state.error = undefined;
+        state.isLoading = false;
+        state.data = action.payload;
+        state.form = action.payload;
+        state.readonly = true;
+      })
+      .addCase(updateProfileData.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;
       });

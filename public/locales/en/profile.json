@@ -1,6 +1,10 @@
 {
   "Профиль": "Profile",
   "Редактировать": "Edit",
-  "Ваше имя": "You name",
-  "Ваша фамилия": "You last name"
+  "Ваше имя": "Your name",
+  "Ваша фамилия": "Your last name",
+  "Ваш возраст": "Your age",
+  "Ваш город": "Your city",
+  "Ваш username": "Your username",
+  "Ваш аватар": "Your avatar"
 }

@@ -1,12 +1,32 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "author": "typicode" },
-    { "id": "2", "title": "json-server 1", "author": "typicode 1" },
-    { "id": "3", "title": "json-server 2", "author": "typicode 2" },
-    { "id": "4", "title": "json-server 3", "author": "typicode 3" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server 1",
+      "author": "typicode 1"
+    },
+    {
+      "id": "3",
+      "title": "json-server 2",
+      "author": "typicode 2"
+    },
+    {
+      "id": "4",
+      "title": "json-server 3",
+      "author": "typicode 3"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": "1" }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
   ],
   "users": [
     {
@@ -21,7 +41,7 @@
     "age": "28",
     "currency": "RUB",
     "country": "Russia",
-    "city": "Dmitrov",
+    "city": "Dmitrov city vse socity",
     "username": "admin",
     "avatar": "https://sun9-14.userapi.com/impg/9iFKRv193rl60zip1cKrz3Kh5HIGAgClpBW9lg/4qOEDoVY3O0.jpg?size=1024x1024&quality=95&sign=99f02934e7028cd616a903dd61fe17cf&type=album"
   }
