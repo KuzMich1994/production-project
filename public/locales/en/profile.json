@@ -6,5 +6,10 @@
   "Ваш возраст": "Your age",
   "Ваш город": "Your city",
   "Ваш username": "Your username",
-  "Ваш аватар": "Your avatar"
+  "Ваш аватар": "Your avatar",
+  "Имя и фамилия обязательны": "First and last name are required",
+  "Не корректный возраст": "Incorrect age",
+  "Не корректный регион": "Incorrect country",
+  "Данные не указаны": "No data",
+  "Ошибка сервера при сохранении": "Server error on save"
 }
