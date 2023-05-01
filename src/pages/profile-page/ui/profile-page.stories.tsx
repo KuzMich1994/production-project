@@ -5,6 +5,9 @@ import { ThemeDecorator } from 'shared/config/storybook/theme-decorator/theme-de
 import { Theme } from 'app/providers/theme-provider';
 import ProfilePage from 'pages/profile-page/ui/profile-page';
 import { StoreDecorator } from 'shared/config/storybook/store-decorator/store-decorator';
+import { Country } from 'entities/country';
+import { Currency } from 'entities/currency';
+import avatar from 'shared/assets/tests/stories.jpg';
 
 export default {
   title: 'pages/profile-page',
@@ -20,11 +23,15 @@ export const Light = Template.bind({});
 Light.args = {};
 Light.decorators = [StoreDecorator({
   profile: {
-    readonly: true,
-    isLoading: false,
-    data: {
-      first: 'Sergey',
+    form: {
+      username: 'admin',
+      age: 22,
+      country: Country.RUSSIA,
+      currency: Currency.RUB,
+      city: 'Dmitrov',
+      avatar,
       lastName: 'Kuzmichev',
+      first: 'Sergey',
     },
   },
 })];
@@ -34,11 +41,15 @@ Dark.args = {};
 
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
   profile: {
-    readonly: true,
-    isLoading: false,
-    data: {
-      first: 'Sergey',
+    form: {
+      username: 'admin',
+      age: 22,
+      country: Country.RUSSIA,
+      currency: Currency.RUB,
+      city: 'Dmitrov',
+      avatar,
       lastName: 'Kuzmichev',
+      first: 'Sergey',
     },
   },
 })];

@@ -9,7 +9,8 @@ import {
   getProfileValidateErrors,
   profileActions,
   ProfileCard,
-  profileReducer, ValidateProfileError,
+  profileReducer,
+  ValidateProfileError,
 } from 'entities/profile';
 import { useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
@@ -46,7 +47,9 @@ function ProfilePage({ className }: ProfilePageProps): JSX.Element {
   };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeFirstName = useCallback((value?: string) => {

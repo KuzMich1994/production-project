@@ -31,12 +31,13 @@ export default {
   rootDir: '../../',
   setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
   moduleNameMapper: {
-    '\\.(scss)$': 'identity-obj-proxy',
+    '\\.(scss|png|jpg|jpeg)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jest-empty-component.tsx'),
   },
   globals: {
     __IS_DEV__: true,
     __API__: '',
+    __PROJECT__: 'jest',
   },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
