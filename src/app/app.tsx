@@ -3,13 +3,15 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/navbar';
 import { Sidebar } from 'widgets/sidebar';
 import { Suspense, useEffect } from 'react';
-import { userActions } from 'entities/user';
+import { getUserMounted, userActions } from 'entities/user';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import { useTheme } from 'app/providers/theme-provider';
+import { useSelector } from 'react-redux';
 
 function App(): JSX.Element {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
+  const mounted = useSelector(getUserMounted);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -21,7 +23,7 @@ function App(): JSX.Element {
         <Navbar />
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {mounted && <AppRouter />}
         </div>
       </Suspense>
     </div>
