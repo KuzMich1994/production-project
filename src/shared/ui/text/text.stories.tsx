@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator/theme-decorator';
 import { Theme } from 'app/providers/theme-provider';
-import Text, { TextTheme } from './text';
+import Text, { TextSize, TextTheme } from './text';
 
 export default {
   title: 'shared/ui/text',
@@ -64,3 +64,10 @@ TextElementDark.args = {
   text: 'text text',
 };
 TextElementDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const TextL = Template.bind({});
+TextL.args = {
+  title: 'text',
+  text: 'text text',
+  size: TextSize.L,
+};
