@@ -12,13 +12,15 @@ import {
   profileReducer,
   ValidateProfileError,
 } from 'entities/profile';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/currency';
 import { Country } from 'entities/country';
 import Text, { TextTheme } from 'shared/ui/text/text';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initial-effect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './profile-page-hearder/profile-page-header';
 
 const reducers: ReducerList = {
@@ -36,6 +38,7 @@ function ProfilePage({ className }: ProfilePageProps): JSX.Element {
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{id: string}>();
   const { t } = useTranslation('profile');
 
   const validateErrorsTranslates = {
@@ -46,11 +49,11 @@ function ProfilePage({ className }: ProfilePageProps): JSX.Element {
     [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера при сохранении'),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstName = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }));

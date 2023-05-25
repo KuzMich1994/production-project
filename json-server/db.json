@@ -29,7 +29,9 @@
       "img": "https://itproger.com/img/courses/1476977754.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -110,6 +112,12 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ля ля ля",
+      "id": "d-71pa4"
     }
   ],
   "users": [
@@ -128,14 +136,28 @@
       "avatar": "https://sun9-3.userapi.com/impf/tg8ykCDuF-4ppIjey-Tdk4wD91S2QrMR5rfL7A/rQTs3xEQG0U.jpg?size=720x960&quality=96&sign=39d5e6c673160d6cbdd0c777e60c8258&type=album"
     }
   ],
-  "profile": {
-    "first": "Сергей",
-    "lastName": "Кузьмичев",
-    "age": "28",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Dmitrov city vse socity",
-    "username": "admin",
-    "avatar": "https://sun9-14.userapi.com/impg/9iFKRv193rl60zip1cKrz3Kh5HIGAgClpBW9lg/4qOEDoVY3O0.jpg?size=1024x1024&quality=95&sign=99f02934e7028cd616a903dd61fe17cf&type=album"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Сергей",
+      "lastName": "Кузьмичев",
+      "age": "28",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Dmitrov city vse socity",
+      "username": "admin",
+      "avatar": "https://sun9-14.userapi.com/impg/9iFKRv193rl60zip1cKrz3Kh5HIGAgClpBW9lg/4qOEDoVY3O0.jpg?size=1024x1024&quality=95&sign=99f02934e7028cd616a903dd61fe17cf&type=album"
+    },
+    {
+      "id": "2",
+      "first": "Серега",
+      "lastName": "Кузьмич",
+      "age": "28",
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Dmitrov city vse socity 2",
+      "username": "user",
+      "avatar": "https://sun9-3.userapi.com/impf/tg8ykCDuF-4ppIjey-Tdk4wD91S2QrMR5rfL7A/rQTs3xEQG0U.jpg?size=720x960&quality=96&sign=39d5e6c673160d6cbdd0c777e60c8258&type=album"
+    }
+  ]
 }

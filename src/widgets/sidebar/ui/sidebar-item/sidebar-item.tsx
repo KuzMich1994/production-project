@@ -25,7 +25,7 @@ function SidebarItem({ item, collapsed }: SidebarItemProps): JSX.Element | null 
     <AppLink
       theme={AppLinkTheme.PRIMARY_INVERTED}
       className={classNames(s.sidebarItem, { [s.collapsed]: collapsed })}
-      to={item.path}
+      to={`${item.path}${item.path.includes('profile') ? `${isAuth?.id}` : ''}`}
     >
       <item.Icon className={s.linkIcon} />
       <span className={s.linkText}>{t(item.text)}</span>

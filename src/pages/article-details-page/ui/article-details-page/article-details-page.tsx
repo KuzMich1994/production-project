@@ -12,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initia
 import {
   fetchCommentsByArticleId,
 } from 'pages/article-details-page/model/services/fetch-comments-by-article-id/fetch-comments-by-article-id';
+import { AddCommentFormAsync } from 'features/add-comment-form';
 import s from './article-details-page.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/article-details-comments-slice';
 import {
@@ -52,6 +53,7 @@ function ArticleDetailsPage({ className }: ArticleDetailsPageProps): JSX.Element
       <div className={classNames(s.articleDetailsPage, {}, [className])}>
         <ArticleDetails id={id} />
         <Text title={t('Комментарии').toString()} className={s.commentTitle} />
+        <AddCommentFormAsync />
         <CommentList
           error={error}
           isLoading={commentsIsLoading}

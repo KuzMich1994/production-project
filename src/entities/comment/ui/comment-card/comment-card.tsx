@@ -3,6 +3,8 @@ import { memo } from 'react';
 import { Avatar } from 'shared/ui/avatar/avatar';
 import Text, { TextAlign, TextTheme } from 'shared/ui/text/text';
 import Skeleton from 'shared/ui/skeleton/skeleton';
+import AppLink from 'shared/ui/app-link/app-link';
+import { RoutePath } from 'shared/config/route-config/route-config';
 import { Comment } from '../../model/types/comment';
 import s from './comment-card.module.scss';
 
@@ -41,10 +43,10 @@ function CommentCard(props: CommentCardProps): JSX.Element {
 
   return (
     <div className={classNames(s.commentCard, {}, [className])}>
-      <div className={s.header}>
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={s.header}>
         {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
         <Text className={s.username} title={comment.user.username} />
-      </div>
+      </AppLink>
       <Text className={s.text} text={comment.text} />
     </div>
   );
