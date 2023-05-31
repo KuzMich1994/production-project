@@ -5,8 +5,8 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/class-names/class-names';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/user';
+import { SidebarItemType } from 'widgets/sidebar/model/types/sidebar';
 import s from './sidebar-item.module.scss';
-import { SidebarItemType } from '../../model/items';
 
 interface SidebarItemProps {
   item: SidebarItemType;
@@ -25,7 +25,7 @@ function SidebarItem({ item, collapsed }: SidebarItemProps): JSX.Element | null 
     <AppLink
       theme={AppLinkTheme.PRIMARY_INVERTED}
       className={classNames(s.sidebarItem, { [s.collapsed]: collapsed })}
-      to={`${item.path}${item.path.includes('profile') ? `${isAuth?.id}` : ''}`}
+      to={item.path}
     >
       <item.Icon className={s.linkIcon} />
       <span className={s.linkText}>{t(item.text)}</span>
