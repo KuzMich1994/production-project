@@ -10,12 +10,12 @@ import s from './comment-card.module.scss';
 
 interface CommentCardProps {
   className?: string;
-  comment: Comment;
+  comment?: Comment;
   isLoading?: boolean;
   error?: string;
 }
 
-function CommentCard(props: CommentCardProps): JSX.Element {
+function CommentCard(props: CommentCardProps) {
   const {
     comment,
     isLoading,
@@ -31,7 +31,7 @@ function CommentCard(props: CommentCardProps): JSX.Element {
 
   if (isLoading) {
     return (
-      <div className={classNames(s.commentCard, {}, [className])}>
+      <div className={classNames(s.commentCard, {}, [className, s.isLoading])}>
         <div className={s.header}>
           <Skeleton border="50%" height={30} width={30} />
           <Skeleton className={s.username} width={100} height={24} />
@@ -39,6 +39,10 @@ function CommentCard(props: CommentCardProps): JSX.Element {
         <Skeleton width="100%" height={48} className={s.text} />
       </div>
     );
+  }
+
+  if (!comment) {
+    return null;
   }
 
   return (
