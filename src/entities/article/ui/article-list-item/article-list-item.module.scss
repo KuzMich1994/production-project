@@ -1,0 +1,62 @@
+.tile {
+  max-width: 230px;
+
+  .card {
+    padding: 15px;
+    border-radius: 12px;
+    background: var(--card-bg);
+  }
+
+  .img-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+
+  .img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .date {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .types p {
+    max-width: 115px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .views-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .views-icon {
+    margin-right: 8px;
+  }
+
+  .article-title {
+    margin-top: 8px;
+  }
+
+  .article-title p {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

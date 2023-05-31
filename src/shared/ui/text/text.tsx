@@ -25,6 +25,7 @@ interface TextProps {
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
+  hasElementTitle?: boolean;
 }
 
 function Text(props: TextProps): JSX.Element {
@@ -35,6 +36,7 @@ function Text(props: TextProps): JSX.Element {
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
     size = TextSize.M,
+    hasElementTitle,
   } = props;
 
   const mods: Mods = {
@@ -45,10 +47,10 @@ function Text(props: TextProps): JSX.Element {
   return (
     <div className={classNames(s.text, mods, [className, s[theme]])}>
       {
-        title && <p className={s.title}>{title}</p>
+        title && <p title={hasElementTitle ? title : undefined} className={s.title}>{title}</p>
       }
       {
-        text && <p className={s.text}>{text}</p>
+        text && <p title={hasElementTitle ? text : undefined} className={s.text}>{text}</p>
       }
     </div>
   );
