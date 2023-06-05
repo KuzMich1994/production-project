@@ -1,34 +1,21 @@
-import { classNames } from 'shared/lib/class-names/class-names';
-import { memo } from 'react';
-import { Article, ArticleList, ArticleView } from 'entities/article';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Article, ArticleView } from 'entities/article';
 import { ArticleBlockType, ArticleType } from 'entities/article/model/types/article';
-import s from './articles-page.module.scss';
+import ArticleList from './article-list';
 
-interface ArticlesPageProps {
-  className?: string;
-}
-
-const article = {
+const article: Article = {
   id: '1',
-  title: 'Javascript news aslkhfouwqghquwtgr uqwtguqwtg uqiwtg ',
+  title: 'Javascript news',
+  subtitle: 'Что нового в JS за 2022 год?',
   user: {
     id: '1',
     avatar: 'https://sun9-14.userapi.com/impg/9iFKRv193rl60zip1cKrz3Kh5HIGAgClpBW9lg/4qOEDoVY3O0.jpg?size=1024x1024&quality=95&sign=99f02934e7028cd616a903dd61fe17cf&type=album',
     username: 'admin',
   },
-  subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://itproger.com/img/courses/1476977754.jpg',
   views: 1022,
   createdAt: '26.02.2022',
-  type: [
-    ArticleType.IT,
-    ArticleType.IT,
-    ArticleType.IT,
-    ArticleType.IT,
-    ArticleType.IT,
-    ArticleType.IT,
-    ArticleType.IT,
-  ],
+  type: [ArticleType.IT],
   blocks: [
     {
       id: '1',
@@ -89,24 +76,41 @@ const article = {
       ],
     },
   ],
-} as Article;
+};
+export default {
+  title: 'entities/ArticleList',
+  component: ArticleList,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleList>;
 
-export function ArticlesPage({ className }: ArticlesPageProps): JSX.Element {
-  return (
-    <div className={classNames(s.articlesPage, {}, [className])}>
-      <ArticleList
-        view={ArticleView.LIST}
-        articles={
-          new Array(16)
-            .fill(0)
-            .map((item, index) => ({
-              ...article,
-              id: String(index),
-            }))
-        }
-      />
-    </div>
-  );
-}
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
-export default memo(ArticlesPage);
+export const IsLoadingTile = Template.bind({});
+IsLoadingTile.args = {
+  isLoading: true,
+  articles: [],
+  view: ArticleView.TILE,
+};
+
+export const IsLoadingList = Template.bind({});
+IsLoadingList.args = {
+  isLoading: true,
+  articles: [],
+  view: ArticleView.LIST,
+};
+
+export const Tile = Template.bind({});
+Tile.args = {
+  articles: new Array(5)
+    .fill(article),
+  view: ArticleView.TILE,
+};
+
+export const List = Template.bind({});
+List.args = {
+  articles: new Array(5)
+    .fill(article),
+  view: ArticleView.LIST,
+};

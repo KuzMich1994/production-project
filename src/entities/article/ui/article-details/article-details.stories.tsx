@@ -18,6 +18,11 @@ const article: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
+  user: {
+    id: '1',
+    avatar: 'https://sun9-14.userapi.com/impg/9iFKRv193rl60zip1cKrz3Kh5HIGAgClpBW9lg/4qOEDoVY3O0.jpg?size=1024x1024&quality=95&sign=99f02934e7028cd616a903dd61fe17cf&type=album',
+    username: 'admin',
+  },
   img: 'https://itproger.com/img/courses/1476977754.jpg',
   views: 1022,
   createdAt: '26.02.2022',

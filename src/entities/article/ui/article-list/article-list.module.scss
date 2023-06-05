@@ -1,3 +1,14 @@
-.article-list {
-  background: transparent;
+.tile {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  grid-gap: 30px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    margin-bottom: 30px;
+  }
 }
