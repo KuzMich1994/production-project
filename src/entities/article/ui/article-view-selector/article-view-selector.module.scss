@@ -1,0 +1,8 @@
+.article-view-selector {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.selected {
+  fill: var(--secondary-color);
+}
