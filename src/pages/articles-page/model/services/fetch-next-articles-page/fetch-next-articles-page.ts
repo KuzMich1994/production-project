@@ -8,10 +8,6 @@ import {
   getArticlesPageNumber,
 } from '../../selectors/articles-page-selectors';
 
-export interface FetchArticleListProps {
-  page?: number;
-}
-
 export const fetchNextArticlesPage = createAsyncThunk<
   void,
   void,

@@ -9,7 +9,7 @@ import Page from 'shared/ui/page/page';
 import {
   fetchNextArticlesPage,
 } from 'pages/articles-page/model/services/fetch-next-articles-page/fetch-next-articles-page';
-import { fetchArticleList } from '../../model/services/fetch-article-list/fetch-article-list';
+import { initArticlesPage } from '../../model/services/init-articles-page/init-articles-page';
 import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articles-page-selectors';
 import s from './articles-page.module.scss';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articles-page-slice';
@@ -41,14 +41,11 @@ export function ArticlesPage({ className }: ArticlesPageProps): JSX.Element {
   }, [dispatch, isLoading]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticleList({
-      page: 1,
-    }));
+    dispatch(initArticlesPage());
   });
 
   return (
-    <DynamicModuleLoader reducerList={reducers}>
+    <DynamicModuleLoader reducerList={reducers} removeAfterUnmount={false}>
       <Page
         className={classNames(s.articlesPage, {}, [className])}
         onScrollEnd={onLoadNextPart}
