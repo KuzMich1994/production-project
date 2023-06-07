@@ -39,6 +39,7 @@ function CommentList(props: CommentListProps): JSX.Element {
         comments?.length
           ? comments.map((comment) => (
             <CommentCard
+              key={comment.id}
               className={s.commentCard}
               comment={comment}
               isLoading={isLoading}

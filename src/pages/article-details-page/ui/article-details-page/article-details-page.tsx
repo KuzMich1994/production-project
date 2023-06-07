@@ -12,7 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initia
 import { AddCommentFormAsync } from 'features/add-comment-form';
 import Button, { ButtonTheme } from 'shared/ui/button/button';
 import { RoutePath } from 'shared/config/route-config/route-config';
-import Page from 'shared/ui/page/page';
+import Page from 'widgets/page/page';
 import {
   fetchCommentsByArticleId,
 } from '../../model/services/fetch-comments-by-article-id/fetch-comments-by-article-id';

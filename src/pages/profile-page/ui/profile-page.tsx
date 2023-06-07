@@ -21,7 +21,7 @@ import Text, { TextTheme } from 'shared/ui/text/text';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initial-effect';
 import { useParams } from 'react-router-dom';
-import Page from 'shared/ui/page/page';
+import Page from 'widgets/page/page';
 import { ProfilePageHeader } from './profile-page-hearder/profile-page-header';
 
 const reducers: ReducerList = {
