@@ -12,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initia
 import { AddCommentFormAsync } from 'features/add-comment-form';
 import Button, { ButtonTheme } from 'shared/ui/button/button';
 import { RoutePath } from 'shared/config/route-config/route-config';
+import Page from 'shared/ui/page/page';
 import {
   fetchCommentsByArticleId,
 } from '../../model/services/fetch-comments-by-article-id/fetch-comments-by-article-id';
@@ -54,15 +55,15 @@ function ArticleDetailsPage({ className }: ArticleDetailsPageProps): JSX.Element
 
   if (!id) {
     return (
-      <div className={classNames(s.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(s.articleDetailsPage, {}, [className])}>
         <Text title={t('Статья не найдена').toString()} />
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducerList={reducerList}>
-      <div className={classNames(s.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(s.articleDetailsPage, {}, [className])}>
         <Button
           theme={ButtonTheme.OUTLINE}
           onClick={onBackToList}
@@ -77,7 +78,7 @@ function ArticleDetailsPage({ className }: ArticleDetailsPageProps): JSX.Element
           isLoading={commentsIsLoading}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 }

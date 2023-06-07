@@ -27,7 +27,7 @@ function Sidebar({ className }: SidebarProps): JSX.Element {
   )), [collapsed, sidebarItemsList]);
 
   return (
-    <div data-testid="sidebar" className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
+    <menu data-testid="sidebar" className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
       <Button
         theme={ButtonTheme.BACKGROUND_INVERTED}
         data-testid="sidebar-toggle"
@@ -47,7 +47,7 @@ function Sidebar({ className }: SidebarProps): JSX.Element {
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} />
       </div>
-    </div>
+    </menu>
   );
 }
 

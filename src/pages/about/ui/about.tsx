@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
+import Page from 'shared/ui/page/page';
 
 function AboutPage(): JSX.Element {
   const { t } = useTranslation('about');
 
   return (
-    <div>
+    <Page>
       <h1>{t('О сайте')}</h1>
-    </div>
+    </Page>
   );
 }
 

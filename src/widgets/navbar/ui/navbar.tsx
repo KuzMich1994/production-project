@@ -32,7 +32,7 @@ function Navbar({ className }: NavbarProps): JSX.Element {
 
   if (authData) {
     return (
-      <div className={classNames(s.navbar, {}, [className])}>
+      <header className={classNames(s.navbar, {}, [className])}>
         <div className={classNames(s.navbar__links)}>
           <Button
             theme={ButtonTheme.CLEAR_INVERTED}
@@ -41,12 +41,12 @@ function Navbar({ className }: NavbarProps): JSX.Element {
             {t('Выйти')}
           </Button>
         </div>
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={classNames(s.navbar, {}, [className])}>
+    <header className={classNames(s.navbar, {}, [className])}>
       <div className={classNames(s.navbar__links)}>
         <Button
           theme={ButtonTheme.CLEAR_INVERTED}
@@ -60,7 +60,7 @@ function Navbar({ className }: NavbarProps): JSX.Element {
           <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
         )
       }
-    </div>
+    </header>
   );
 }
 

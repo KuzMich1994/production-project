@@ -4,6 +4,7 @@ import TileIcon from 'shared/assets/icons/tile.svg';
 import ListIcon from 'shared/assets/icons/list.svg';
 import Button, { ButtonTheme } from 'shared/ui/button/button';
 import Icon from 'shared/ui/icon/icon';
+import { nanoid } from '@reduxjs/toolkit';
 import { ArticleView } from '../../model/types/article';
 import s from './article-view-selector.module.scss';
 
@@ -40,6 +41,7 @@ function ArticleViewSelector(props: ArticleViewSelectorProps): JSX.Element {
       {
         viewTypes.map((viewType) => (
           <Button
+            key={nanoid()}
             theme={ButtonTheme.CLEAR}
             onClick={onClickHandler(viewType.view)}
           >

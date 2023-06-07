@@ -27,16 +27,6 @@ function ArticleList(props: ArticleListProps): JSX.Element {
     isLoading,
   } = props;
 
-  if (isLoading) {
-    return (
-      <div className={classNames(s.articleList, {}, [className, s[view.toLowerCase()]])}>
-        {
-          getSkeletons(view)
-        }
-      </div>
-    );
-  }
-
   const renderArticle = (article: Article) => (
     <ArticleListItem
       key={article.id}
@@ -52,6 +42,7 @@ function ArticleList(props: ArticleListProps): JSX.Element {
           ? articles.map(renderArticle)
           : null
       }
+      {isLoading && getSkeletons(view)}
     </div>
   );
 }
