@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/store-decorator/store-decorator';
 import Page from './page';
 
 export default {
-  title: 'shared/page',
+  title: 'widget/page',
   component: Page,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -14,3 +15,4 @@ const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [StoreDecorator({ scrollPosition: { scroll: {} } })];

@@ -1,6 +1,8 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/store-provider';
-import { Article, ArticleSortField, ArticleView } from 'entities/article';
+import {
+  Article, ArticleSortField, ArticleType, ArticleView,
+} from 'entities/article';
 import { ARTICLE_VIEW_STORAGE_KEY } from 'shared/const/local-storage';
 import { SortOrder } from 'shared/types';
 import { ArticlesPageSchema } from '../types/article-page-schema';
@@ -29,6 +31,7 @@ const articlesPageSlice = createSlice({
     order: 'asc',
     search: '',
     sort: ArticleSortField.CREATED,
+    type: ArticleType.ALL,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -46,6 +49,9 @@ const articlesPageSlice = createSlice({
     },
     setSortType: (state, action: PayloadAction<ArticleSortField>) => {
       state.sort = action.payload;
+    },
+    setArticleType: (state, action: PayloadAction<ArticleType>) => {
+      state.type = action.payload;
     },
     initState: (state) => {
       const view = localStorage.getItem(ARTICLE_VIEW_STORAGE_KEY) as ArticleView;
@@ -66,7 +72,7 @@ const articlesPageSlice = createSlice({
       })
       .addCase(fetchArticleList.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.hasMore = action.payload.length > 0;
+        state.hasMore = action.payload.length >= state.limit;
 
         if (action.meta.arg.replace) {
           articlesAdapter.addMany(state, action.payload);

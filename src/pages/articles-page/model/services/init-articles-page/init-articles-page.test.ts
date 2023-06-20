@@ -4,6 +4,8 @@ import { initArticlesPage } from './init-articles-page';
 
 jest.mock('../../slices/articles-page-slice');
 
+const searchParams = new URLSearchParams('');
+
 describe('initArticlesPageTest', () => {
   test('init state called', async () => {
     const thunk = new TestAsyncThunk(initArticlesPage, {
@@ -18,7 +20,7 @@ describe('initArticlesPageTest', () => {
       },
     });
 
-    await thunk.callThunk();
+    await thunk.callThunk(searchParams);
 
     expect(thunk.dispatch).toBeCalledTimes(4);
     expect(articlesPageActions.initState).toBeCalledTimes(1);
@@ -36,7 +38,7 @@ describe('initArticlesPageTest', () => {
       },
     });
 
-    await thunk.callThunk();
+    await thunk.callThunk(searchParams);
 
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(articlesPageActions.initState).not.toHaveBeenCalled();

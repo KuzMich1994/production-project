@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import {
-  ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector,
+  ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector, ArticleType,
 } from 'entities/article';
 import { articlesPageActions } from 'pages/articles-page/model/slices/articles-page-slice';
 import { useSelector } from 'react-redux';
@@ -11,10 +11,13 @@ import Card from 'shared/ui/card/card';
 import Input from 'shared/ui/input/input';
 import { SortOrder } from 'shared/types';
 import { fetchArticleList } from 'pages/articles-page/model/services/fetch-article-list/fetch-article-list';
+import { useDebounce } from 'shared/lib/hooks/use-debounce/use-debounce';
+import { TabItem } from 'shared/ui/tabs/tabs';
+import ArticleTypeTabs from 'entities/article/ui/article-type-tabs/article-type-tabs';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
-  getArticlesPageSort,
+  getArticlesPageSort, getArticlesPageType,
   getArticlesPageView,
 } from '../../model/selectors/articles-page-selectors';
 import s from './articles-page-filters.module.scss';
@@ -28,6 +31,7 @@ function ArticlesPageFilters({ className }: ArticlesPageFiltersProps): JSX.Eleme
   const sort = useSelector(getArticlesPageSort);
   const order = useSelector(getArticlesPageOrder);
   const searchQuery = useSelector(getArticlesPageSearch);
+  const articleType = useSelector(getArticlesPageType);
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
@@ -35,6 +39,8 @@ function ArticlesPageFilters({ className }: ArticlesPageFiltersProps): JSX.Eleme
     dispatch(articlesPageActions.setPage(1));
     dispatch(fetchArticleList({ replace: true }));
   }, [dispatch]);
+
+  const debouncedFetchData = useDebounce(fetchData, 500);
 
   const onChangeView = useCallback((newView: ArticleView) => {
     dispatch(articlesPageActions.setView(newView));
@@ -52,8 +58,13 @@ function ArticlesPageFilters({ className }: ArticlesPageFiltersProps): JSX.Eleme
 
   const onChangeSearch = useCallback((newSearch: string) => {
     dispatch(articlesPageActions.setSearchQuery(newSearch));
+    debouncedFetchData();
+  }, [dispatch, debouncedFetchData]);
+
+  const onChangeType = useCallback((type: ArticleType) => {
+    dispatch(articlesPageActions.setArticleType(type));
     fetchData();
-  }, [dispatch, fetchData]);
+  }, [fetchData, dispatch]);
 
   return (
     <div className={classNames(s.articlesPageFilters, {}, [className])}>
@@ -73,6 +84,11 @@ function ArticlesPageFilters({ className }: ArticlesPageFiltersProps): JSX.Eleme
           onChange={onChangeSearch}
         />
       </Card>
+      <ArticleTypeTabs
+        onChangeType={onChangeType}
+        value={articleType}
+        className={s.tabs}
+      />
     </div>
   );
 }
