@@ -27,5 +27,13 @@
   "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
   "Комментарии отстутствуют": "No comments",
   "Введите текст комментария": "Enter comment text",
-  "Отправить": "Send"
+  "Отправить": "Send",
+  "Сортировать по": "Sort by",
+  "Поиск": "Search",
+  "по": "by",
+  "возрастанию": "ascending",
+  "убыванию": "descending",
+  "дате создания": "created at",
+  "названию": "title",
+  "просмотрам": "views"
 }

@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { memo, useCallback } from 'react';
-import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/article';
+import { ArticleList } from 'entities/article';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initial-effect';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
@@ -12,7 +12,8 @@ import {
 import { initArticlesPage } from '../../model/services/init-articles-page/init-articles-page';
 import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articles-page-selectors';
 import s from './articles-page.module.scss';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articles-page-slice';
+import { articlesPageReducer, getArticles } from '../../model/slices/articles-page-slice';
+import ArticlesPageFilters from '../articles-page-filters/articles-page-filters';
 
 interface ArticlesPageProps {
   className?: string;
@@ -27,10 +28,6 @@ export function ArticlesPage({ className }: ArticlesPageProps): JSX.Element {
   const articles = useSelector(getArticles.selectAll);
   const view = useSelector(getArticlesPageView);
   const isLoading = useSelector(getArticlesPageIsLoading);
-
-  const onChangeView = useCallback((newView: ArticleView) => {
-    dispatch(articlesPageActions.setView(newView));
-  }, [dispatch]);
 
   // lesson 56 26:03
 
@@ -50,11 +47,12 @@ export function ArticlesPage({ className }: ArticlesPageProps): JSX.Element {
         className={classNames(s.articlesPage, {}, [className])}
         onScrollEnd={onLoadNextPart}
       >
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticlesPageFilters />
         <ArticleList
           isLoading={isLoading}
           view={view}
           articles={articles}
+          className={s.list}
         />
       </Page>
     </DynamicModuleLoader>
