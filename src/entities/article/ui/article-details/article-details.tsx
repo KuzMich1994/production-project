@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import { fetchArticleById } from 'entities/article/model/services/fetch-article-by-id/fetch-article-by-id';
@@ -76,7 +76,11 @@ function ArticleDetails({ className, id }: ArticleDetailsProps): JSX.Element {
     }
   }, []);
 
-  useInitialEffect(() => dispatch(fetchArticleById(id)));
+  useEffect(() => {
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
+  }, [dispatch, id]);
 
   let content;
 

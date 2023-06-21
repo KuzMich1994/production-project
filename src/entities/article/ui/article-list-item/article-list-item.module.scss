@@ -141,4 +141,11 @@
       content: '';
     }
   }
+
+  .link-button {
+    padding: 6px 15px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+  }
 }

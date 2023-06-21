@@ -1019,6 +1019,18 @@
       "userId": "1",
       "text": "oaifhoasfh",
       "id": "gA4I27i"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "test new reducer",
+      "id": "t4aqNv8"
+    },
+    {
+      "articleId": "16",
+      "userId": "1",
+      "text": "test reducer",
+      "id": "2M_hX_I"
     }
   ],
   "users": [

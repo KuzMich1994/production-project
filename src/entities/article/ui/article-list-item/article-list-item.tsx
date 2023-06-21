@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/class-names/class-names';
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import Text from 'shared/ui/text/text';
 import ViewsIcon from 'shared/assets/icons/eye-20-20.svg';
 import Icon from 'shared/ui/icon/icon';
@@ -9,6 +9,7 @@ import Button, { ButtonTheme } from 'shared/ui/button/button';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/route-config/route-config';
+import AppLink from 'shared/ui/app-link/app-link';
 import ArticleTextBlockComponent from '../article-text-block-component/article-text-block-component';
 import {
   Article, ArticleBlockType, ArticleTextBlock, ArticleView,
@@ -19,6 +20,7 @@ interface ArticleListItemProps {
   className?: string;
   article: Article;
   view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 function ArticleListItem(props: ArticleListItemProps): JSX.Element {
@@ -26,14 +28,10 @@ function ArticleListItem(props: ArticleListItemProps): JSX.Element {
     className,
     article,
     view,
+    target,
   } = props;
 
   const { t } = useTranslation();
-  const navigate = useNavigate();
-
-  const onOpenArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article.id}`);
-  }, [article.id, navigate]);
 
   const types = <Text text={article.type.join(', ')} className={s.types} />;
   const views = (
@@ -65,12 +63,13 @@ function ArticleListItem(props: ArticleListItemProps): JSX.Element {
             )
           }
           <div className={s.footer}>
-            <Button
-              theme={ButtonTheme.OUTLINE}
-              onClick={onOpenArticle}
+            <AppLink
+              className={s.linkButton}
+              target={target}
+              to={`${RoutePath.article_details}${article.id}`}
             >
               {t('Читать далее...')}
-            </Button>
+            </AppLink>
             {views}
           </div>
         </Card>
@@ -79,10 +78,13 @@ function ArticleListItem(props: ArticleListItemProps): JSX.Element {
   }
 
   return (
-    <div className={classNames(s.articleListItem, {}, [className, s[view.toLowerCase()]])}>
+    <AppLink
+      target={target}
+      to={`${RoutePath.article_details}${article.id}`}
+      className={classNames(s.articleListItem, {}, [className, s[view.toLowerCase()]])}
+    >
       <Card
         role="button"
-        onClick={onOpenArticle}
       >
         <div className={s.imgContainer}>
           <img src={article.img} alt={article.title} className={s.img} />
@@ -94,7 +96,7 @@ function ArticleListItem(props: ArticleListItemProps): JSX.Element {
         </div>
         <Text hasElementTitle text={article.title} className={s.articleTitle} />
       </Card>
-    </div>
+    </AppLink>
   );
 }
 

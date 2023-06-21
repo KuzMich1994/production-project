@@ -5,3 +5,18 @@
 .comment-title {
   margin-top: 20px;
 }
+
+.recommendations {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  & > div {
+    flex-shrink: 0;
+    width: 230px;
+  }
+}

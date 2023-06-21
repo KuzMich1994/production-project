@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/class-names/class-names';
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import ArticleListItemSkeleton from 'entities/article/ui/article-list-item/article-list-item-skeleton';
 import { nanoid } from '@reduxjs/toolkit';
 import Text, { TextSize } from 'shared/ui/text/text';
@@ -13,6 +13,7 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.TILE ? 9 : 2)
@@ -27,6 +28,7 @@ function ArticleList(props: ArticleListProps): JSX.Element {
     articles,
     view = ArticleView.TILE,
     isLoading,
+    target,
   } = props;
 
   const { t } = useTranslation('article');
@@ -36,6 +38,7 @@ function ArticleList(props: ArticleListProps): JSX.Element {
       key={article.id}
       article={article}
       view={view}
+      target={target}
     />
   );
 
