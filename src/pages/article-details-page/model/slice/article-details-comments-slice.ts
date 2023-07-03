@@ -3,7 +3,7 @@ import { Comment } from 'entities/comment';
 import { StateSchema } from 'app/providers/store-provider';
 import {
   addCommentForArticle,
-} from 'pages/article-details-page/model/services/add-comment-for-article/add-comment-for-article';
+} from '../services/add-comment-for-article/add-comment-for-article';
 import { ArticleDetailsCommentsSchema } from '../types/article-details-comments-schema';
 import { fetchCommentsByArticleId } from '../services/fetch-comments-by-article-id/fetch-comments-by-article-id';
 

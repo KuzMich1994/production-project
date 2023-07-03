@@ -1,13 +1,11 @@
 import { classNames } from 'shared/lib/class-names/class-names';
-import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import Text from 'shared/ui/text/text';
 import ViewsIcon from 'shared/assets/icons/eye-20-20.svg';
 import Icon from 'shared/ui/icon/icon';
 import Card from 'shared/ui/card/card';
 import { Avatar } from 'shared/ui/avatar/avatar';
-import Button, { ButtonTheme } from 'shared/ui/button/button';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/route-config/route-config';
 import AppLink from 'shared/ui/app-link/app-link';
 import ArticleTextBlockComponent from '../article-text-block-component/article-text-block-component';

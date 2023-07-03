@@ -6,10 +6,10 @@ import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initia
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import { useSelector } from 'react-redux';
 import Page from 'widgets/page/page';
+import { useSearchParams } from 'react-router-dom';
 import {
   fetchNextArticlesPage,
-} from 'pages/articles-page/model/services/fetch-next-articles-page/fetch-next-articles-page';
-import { useSearchParams } from 'react-router-dom';
+} from '../../model/services/fetch-next-articles-page/fetch-next-articles-page';
 import { initArticlesPage } from '../../model/services/init-articles-page/init-articles-page';
 import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articles-page-selectors';
 import s from './articles-page.module.scss';

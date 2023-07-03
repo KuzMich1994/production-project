@@ -2,7 +2,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/test-async-thunk/test-async-thu
 import { Country } from 'entities/country';
 import { Currency } from 'entities/currency';
 import avatar from 'shared/assets/tests/stories.jpg';
-import { ValidateProfileError } from 'entities/profile';
+import { ValidateProfileError } from '../../types/profile';
 import { updateProfileData } from './update-profile-data';
 
 const data = {

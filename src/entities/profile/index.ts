@@ -1,6 +1,6 @@
 import {
   getProfileValidateErrors,
-} from 'entities/profile/model/selectors/get-profile-validate-errors/get-profile-validate-errors';
+} from './model/selectors/get-profile-validate-errors/get-profile-validate-errors';
 import { ProfileCard } from './ui/profile-card/profile-card';
 import { getProfileReadonly } from './model/selectors/get-profile-readonly/get-profile-readonly';
 import { getProfileForm } from './model/selectors/get-profile-form/get-profile-form';

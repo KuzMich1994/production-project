@@ -1031,6 +1031,12 @@
       "userId": "1",
       "text": "test reducer",
       "id": "2M_hX_I"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "iqrh23ht",
+      "id": "dsJagsq"
     }
   ],
   "users": [
@@ -1052,7 +1058,7 @@
   "profile": [
     {
       "id": "1",
-      "first": "Сергей",
+      "first": "Сергей 123",
       "lastName": "Кузьмичев",
       "age": "28",
       "currency": "RUB",

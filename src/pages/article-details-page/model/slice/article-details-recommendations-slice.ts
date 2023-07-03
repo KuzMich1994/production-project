@@ -3,7 +3,7 @@ import { StateSchema } from 'app/providers/store-provider';
 import { Article } from 'entities/article';
 import {
   fetchArticleRecommendations,
-} from 'pages/article-details-page/model/services/fetch-article-recommendations/fetch-article-recommendations';
+} from '../services/fetch-article-recommendations/fetch-article-recommendations';
 import { ArticleDetailsRecommendationsSchema } from '../types/article-details-recommendations-schema';
 
 const recommendationsAdapter = createEntityAdapter<Article>({

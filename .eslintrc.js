@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'kuzmich-plugin',
   ],
   rules: {
     indent: [2, 2, {
@@ -56,6 +57,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
+    'kuzmich-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

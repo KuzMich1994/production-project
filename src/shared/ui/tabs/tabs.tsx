@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { ReactNode, useCallback } from 'react';
-import Card, { CardTheme } from 'shared/ui/card/card';
 import { nanoid } from '@reduxjs/toolkit';
+import Card, { CardTheme } from '../card/card';
 import s from './tabs.module.scss';
 
 export interface TabItem<T extends string> {

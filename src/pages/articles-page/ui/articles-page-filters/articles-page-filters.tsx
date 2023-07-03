@@ -4,16 +4,15 @@ import { memo, useCallback } from 'react';
 import {
   ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector, ArticleType,
 } from 'entities/article';
-import { articlesPageActions } from 'pages/articles-page/model/slices/articles-page-slice';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import Card from 'shared/ui/card/card';
 import Input from 'shared/ui/input/input';
 import { SortOrder } from 'shared/types';
-import { fetchArticleList } from 'pages/articles-page/model/services/fetch-article-list/fetch-article-list';
 import { useDebounce } from 'shared/lib/hooks/use-debounce/use-debounce';
-import { TabItem } from 'shared/ui/tabs/tabs';
 import ArticleTypeTabs from 'entities/article/ui/article-type-tabs/article-type-tabs';
+import { fetchArticleList } from '../../model/services/fetch-article-list/fetch-article-list';
+import { articlesPageActions } from '../../model/slices/articles-page-slice';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,

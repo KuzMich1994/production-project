@@ -11,7 +11,6 @@ export const fetchArticleRecommendations = createAsyncThunk<
       const {
         extra,
         rejectWithValue,
-        getState,
       } = thunkAPI;
 
       try {

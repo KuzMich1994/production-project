@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
-import { fetchArticleById } from 'entities/article/model/services/fetch-article-by-id/fetch-article-by-id';
 import { useSelector } from 'react-redux';
 import Text, { TextAlign, TextSize, TextTheme } from 'shared/ui/text/text';
 import Skeleton from 'shared/ui/skeleton/skeleton';
@@ -11,11 +10,11 @@ import { Avatar } from 'shared/ui/avatar/avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import Icon from 'shared/ui/icon/icon';
-import ArticleCodeBlockComponent from 'entities/article/ui/article-code-block-component/article-code-block-component';
+import { fetchArticleById } from '../../model/services/fetch-article-by-id/fetch-article-by-id';
+import ArticleCodeBlockComponent from '../article-code-block-component/article-code-block-component';
 import ArticleImageBlockComponent
-  from 'entities/article/ui/article-image-block-component/article-image-block-component';
-import ArticleTextBlockComponent from 'entities/article/ui/article-text-block-component/article-text-block-component';
-import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initial-effect';
+  from '../article-image-block-component/article-image-block-component';
+import ArticleTextBlockComponent from '../article-text-block-component/article-text-block-component';
 import {
   getArticleDetailsData,
   getArticleDetailsError,

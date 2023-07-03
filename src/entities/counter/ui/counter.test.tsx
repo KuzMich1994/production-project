@@ -1,7 +1,7 @@
 import { renderComponent } from 'shared/lib/tests/render-component/render-component';
-import { Counter } from 'entities/counter';
 import { screen } from '@testing-library/react';
 import { userEvent } from '@storybook/testing-library';
+import { Counter } from './counter';
 
 describe('counter', () => {
   test('render title with value', () => {

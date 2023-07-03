@@ -1,4 +1,4 @@
-import ArticleSortSelector from 'entities/article/ui/article-sort-selector/article-sort-selector';
+import ArticleSortSelector from './ui/article-sort-selector/article-sort-selector';
 import ArticleViewSelector from './ui/article-view-selector/article-view-selector';
 import ArticleDetails from './ui/article-details/article-details';
 import {

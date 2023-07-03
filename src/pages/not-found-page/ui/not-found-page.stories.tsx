@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator/theme-decorator';
 import { Theme } from 'app/providers/theme-provider';
-import { NotFoundPage } from 'pages/not-found-page';
+import { NotFoundPage } from './not-found-page';
 
 export default {
   title: 'pages/not-found',

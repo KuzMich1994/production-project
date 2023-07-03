@@ -1,4 +1,4 @@
-import CountrySelect from 'entities/country/ui/country-select';
+import CountrySelect from './ui/country-select';
 import { Country } from './model/types/country';
 
 export {

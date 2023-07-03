@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Article, ArticleView } from 'entities/article';
-import { ArticleBlockType, ArticleType } from 'entities/article/model/types/article';
+import {
+  Article, ArticleView, ArticleBlockType, ArticleType,
+} from '../../model/types/article';
 import ArticleList from './article-list';
 
 const article: Article = {

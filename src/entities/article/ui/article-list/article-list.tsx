@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import ArticleListItemSkeleton from 'entities/article/ui/article-list-item/article-list-item-skeleton';
 import { nanoid } from '@reduxjs/toolkit';
 import Text, { TextSize } from 'shared/ui/text/text';
 import { useTranslation } from 'react-i18next';
+import ArticleListItemSkeleton from '../article-list-item/article-list-item-skeleton';
 import ArticleListItem from '../article-list-item/article-list-item';
 import s from './article-list.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
