@@ -10,6 +10,7 @@ import { Avatar } from 'shared/ui/avatar/avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import Icon from 'shared/ui/icon/icon';
+import { HStack, VStack } from 'shared/ui/stack';
 import { fetchArticleById } from '../../model/services/fetch-article-by-id/fetch-article-by-id';
 import ArticleCodeBlockComponent from '../article-code-block-component/article-code-block-component';
 import ArticleImageBlockComponent
@@ -85,13 +86,13 @@ function ArticleDetails({ className, id }: ArticleDetailsProps): JSX.Element {
 
   if (isLoading) {
     content = (
-      <>
+      <VStack gap="8" max align="center">
         <Skeleton className={s.avatar} width={200} height={200} border="50%" />
-        <Skeleton className={s.title} width={700} height={31} />
-        <Skeleton className={s.skeleton} width={400} height={31} />
-        <Skeleton className={s.skeleton} width="100%" height={231} />
-        <Skeleton className={s.skeleton} width="100%" height={231} />
-      </>
+        <Skeleton width={700} height={31} />
+        <Skeleton width={400} height={31} />
+        <Skeleton width="100%" height={231} />
+        <Skeleton width="100%" height={231} />
+      </VStack>
     );
   } else if (error) {
     content = (
@@ -104,23 +105,25 @@ function ArticleDetails({ className, id }: ArticleDetailsProps): JSX.Element {
   } else {
     content = (
       <>
-        <div className={s.avatarContainer}>
+        <HStack justify="center" max>
           <Avatar size={200} src={data?.img} alt={data?.title} className={s.avatar} />
-        </div>
-        <Text
-          className={s.title}
-          title={data?.title}
-          text={data?.subtitle}
-          size={TextSize.L}
-        />
-        <div className={s.articleInfo}>
-          <Icon Svg={EyeIcon} className={s.icon} />
-          <Text text={String(data?.views)} />
-        </div>
-        <div className={s.articleInfo}>
-          <Icon Svg={CalendarIcon} className={s.icon} />
-          <Text text={data?.createdAt} />
-        </div>
+        </HStack>
+        <VStack gap="4" max>
+          <Text
+            className={s.title}
+            title={data?.title}
+            text={data?.subtitle}
+            size={TextSize.L}
+          />
+          <HStack align="center" gap="8">
+            <Icon Svg={EyeIcon} className={s.icon} />
+            <Text text={String(data?.views)} />
+          </HStack>
+          <HStack align="center" gap="8">
+            <Icon Svg={CalendarIcon} className={s.icon} />
+            <Text text={data?.createdAt} />
+          </HStack>
+        </VStack>
         {
           data?.blocks.map(renderBlock)
         }
@@ -130,9 +133,9 @@ function ArticleDetails({ className, id }: ArticleDetailsProps): JSX.Element {
 
   return (
     <DynamicModuleLoader reducerList={reducers} removeAfterUnmount>
-      <div className={classNames(s.ArticleDetails, {}, [className])}>
+      <VStack gap="16" max className={classNames(s.ArticleDetails, {}, [className])}>
         {content}
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 }

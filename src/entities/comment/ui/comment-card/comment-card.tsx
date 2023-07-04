@@ -5,6 +5,7 @@ import Text, { TextAlign, TextTheme } from 'shared/ui/text/text';
 import Skeleton from 'shared/ui/skeleton/skeleton';
 import AppLink from 'shared/ui/app-link/app-link';
 import { RoutePath } from 'shared/config/route-config/route-config';
+import { HStack, VStack } from 'shared/ui/stack';
 import { Comment } from '../../model/types/comment';
 import s from './comment-card.module.scss';
 
@@ -31,13 +32,13 @@ function CommentCard(props: CommentCardProps) {
 
   if (isLoading) {
     return (
-      <div className={classNames(s.commentCard, {}, [className, s.isLoading])}>
-        <div className={s.header}>
+      <VStack gap="4" max className={classNames(s.commentCard, {}, [className, s.isLoading])}>
+        <HStack gap="4" max>
           <Skeleton border="50%" height={30} width={30} />
           <Skeleton className={s.username} width={100} height={24} />
-        </div>
+        </HStack>
         <Skeleton width="100%" height={48} className={s.text} />
-      </div>
+      </VStack>
     );
   }
 
@@ -46,13 +47,15 @@ function CommentCard(props: CommentCardProps) {
   }
 
   return (
-    <div className={classNames(s.commentCard, {}, [className])}>
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={s.header}>
-        {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
-        <Text className={s.username} title={comment.user.username} />
+    <VStack gap="4" max className={classNames(s.commentCard, {}, [className])}>
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+        <HStack gap="4" max>
+          {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
+          <Text className={s.username} title={comment.user.username} />
+        </HStack>
       </AppLink>
       <Text className={s.text} text={comment.text} />
-    </div>
+    </VStack>
   );
 }
 

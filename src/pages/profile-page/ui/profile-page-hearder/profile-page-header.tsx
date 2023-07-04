@@ -9,7 +9,7 @@ import {
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import { getUserAuthData } from 'entities/user';
-import s from './profile-page-header.module.scss';
+import { HStack } from 'shared/ui/stack';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -38,15 +38,14 @@ export function ProfilePageHeader({ className }: ProfilePageHeaderProps): JSX.El
   }, [dispatch]);
 
   return (
-    <div className={classNames(s.profilePageHeader, {}, [className])}>
+    <HStack max align="center" justify="between" className={classNames('', {}, [className])}>
       <Text title={t('Профиль').toString()} />
       {
         canEdit && (
-          <div className={s.buttonsContainer}>
+          <HStack gap="8" align="center" justify="start">
             {
               readonly ? (
                 <Button
-                  className={s.editBtn}
                   theme={ButtonTheme.OUTLINE}
                   onClick={onEdit}
                 >
@@ -55,14 +54,12 @@ export function ProfilePageHeader({ className }: ProfilePageHeaderProps): JSX.El
               ) : (
                 <>
                   <Button
-                    className={classNames(s.btn, {}, [s.editBtn])}
                     theme={ButtonTheme.OUTLINE_RED}
                     onClick={onCanselEdit}
                   >
                     {t('Отменить')}
                   </Button>
                   <Button
-                    className={classNames(s.btn, {}, [s.saveBtn])}
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSave}
                   >
@@ -71,9 +68,9 @@ export function ProfilePageHeader({ className }: ProfilePageHeaderProps): JSX.El
                 </>
               )
             }
-          </div>
+          </HStack>
         )
       }
-    </div>
+    </HStack>
   );
 }

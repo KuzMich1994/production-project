@@ -11,6 +11,7 @@ import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispat
 import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initial-effect';
 import { AddCommentFormAsync } from 'features/add-comment-form';
 import Page from 'widgets/page/page';
+import { VStack } from 'shared/ui/stack';
 import {
   fetchArticleRecommendations,
 } from '../../model/services/fetch-article-recommendations/fetch-article-recommendations';
@@ -72,30 +73,32 @@ function ArticleDetailsPage({ className }: ArticleDetailsPageProps): JSX.Element
   return (
     <DynamicModuleLoader reducerList={reducerList}>
       <Page className={classNames(s.articleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text
-          size={TextSize.L}
-          title={t('Рекомендуем').toString()}
-          className={s.commentTitle}
-        />
-        <ArticleList
-          target="_blank"
-          isLoading={recommendationsIsLoading}
-          articles={recommendations}
-          className={s.recommendations}
-        />
-        <Text
-          size={TextSize.L}
-          title={t('Комментарии').toString()}
-          className={s.commentTitle}
-        />
-        <AddCommentFormAsync onSendComment={onSendComment} />
-        <CommentList
-          error={error}
-          isLoading={commentsIsLoading}
-          comments={comments}
-        />
+        <VStack gap="32" max>
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text
+            size={TextSize.L}
+            title={t('Рекомендуем').toString()}
+            className={s.commentTitle}
+          />
+          <ArticleList
+            target="_blank"
+            isLoading={recommendationsIsLoading}
+            articles={recommendations}
+            className={s.recommendations}
+          />
+          <Text
+            size={TextSize.L}
+            title={t('Комментарии').toString()}
+            className={s.commentTitle}
+          />
+          <AddCommentFormAsync onSendComment={onSendComment} />
+          <CommentList
+            error={error}
+            isLoading={commentsIsLoading}
+            comments={comments}
+          />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );
