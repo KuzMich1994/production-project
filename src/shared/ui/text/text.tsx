@@ -15,6 +15,7 @@ export enum TextAlign {
 }
 
 export enum TextSize {
+  S = 'size-s',
   M = 'size-m',
   L = 'size-l',
 }
@@ -29,6 +30,13 @@ interface TextProps {
   hasElementTitle?: boolean;
 }
 
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+  [TextSize.S]: 'h3',
+  [TextSize.M]: 'h2',
+  [TextSize.L]: 'h1',
+};
 function Text(props: TextProps): JSX.Element {
   const {
     className,
@@ -40,6 +48,8 @@ function Text(props: TextProps): JSX.Element {
     hasElementTitle,
   } = props;
 
+  const HeaderTag = mapSizeToHeaderTag[size];
+
   const mods: Mods = {
     [s[align]]: true,
     [s[size]]: true,
@@ -48,7 +58,7 @@ function Text(props: TextProps): JSX.Element {
   return (
     <div className={classNames(s.text, mods, [className, s[theme]])}>
       {
-        title && <p title={hasElementTitle ? title : undefined} className={s.title}>{title}</p>
+        title && <HeaderTag title={hasElementTitle ? title : undefined} className={s.title}>{title}</HeaderTag>
       }
       {
         text && <p title={hasElementTitle ? text : undefined} className={s.text}>{text}</p>

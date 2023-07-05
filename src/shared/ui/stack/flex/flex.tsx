@@ -1,5 +1,5 @@
 import { classNames, Mods } from 'shared/lib/class-names/class-names';
-import { PropsWithChildren } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react';
 import s from './flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -7,7 +7,8 @@ export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+export interface FlexProps extends DivProps {
   className?: string;
   justify?: FlexJustify;
   align?: FlexAlign;

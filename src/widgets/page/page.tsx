@@ -48,7 +48,7 @@ function Page(props: PropsWithChildren<PageProps>): JSX.Element {
   }, 500);
 
   return (
-    <section
+    <main
       ref={containerRef}
       className={classNames(s.page, {}, [className])}
       onScroll={onScroll}
@@ -57,7 +57,7 @@ function Page(props: PropsWithChildren<PageProps>): JSX.Element {
       {
         onScrollEnd && (<div ref={triggerRef} className={s.trigger} />)
       }
-    </section>
+    </main>
   );
 }
 

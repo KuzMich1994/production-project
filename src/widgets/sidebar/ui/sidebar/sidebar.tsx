@@ -28,7 +28,7 @@ export function Sidebar({ className }: SidebarProps): JSX.Element {
   )), [collapsed, sidebarItemsList]);
 
   return (
-    <menu data-testid="sidebar" className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
+    <aside data-testid="sidebar" className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
       <Button
         theme={ButtonTheme.BACKGROUND_INVERTED}
         data-testid="sidebar-toggle"
@@ -39,7 +39,7 @@ export function Sidebar({ className }: SidebarProps): JSX.Element {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <VStack gap="8" className={s.navLinks}>
+      <VStack role="navigation" gap="8" className={s.navLinks}>
         {
           itemsList
         }
@@ -48,7 +48,7 @@ export function Sidebar({ className }: SidebarProps): JSX.Element {
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} />
       </div>
-    </menu>
+    </aside>
   );
 }
 
