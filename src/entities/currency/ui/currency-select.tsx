@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
-import Select from 'shared/ui/select/select';
 import { memo, useCallback } from 'react';
 import ListBox from 'shared/ui/list-box/list-box';
 import { Currency } from '../model/types/currency';
@@ -36,7 +35,7 @@ function CurrencySelect({
       label={t('Укажите валюту').toString()}
       className={classNames('', {}, [className])}
       readonly={readonly}
-      direction="top"
+      direction="top right"
     />
   );
 }

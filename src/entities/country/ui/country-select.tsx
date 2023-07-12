@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
-import Select from 'shared/ui/select/select';
 import { memo } from 'react';
 import ListBox from 'shared/ui/list-box/list-box';
 import { Country } from '../model/types/country';
@@ -38,7 +37,7 @@ function CountrySelectStories({
       label={t('Укажите страну').toString()}
       className={classNames('', {}, [className])}
       items={options}
-      direction="top"
+      direction="top right"
     />
   );
 }
