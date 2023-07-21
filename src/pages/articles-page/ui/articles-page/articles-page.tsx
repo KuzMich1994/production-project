@@ -1,20 +1,18 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { memo, useCallback } from 'react';
-import { ArticleList } from 'entities/article';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/dynamic-module-loader/dynamic-module-loader';
-import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initial-effect';
+import Page from 'widgets/page/page';
 import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import { useSelector } from 'react-redux';
-import Page from 'widgets/page/page';
+import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initial-effect';
 import { useSearchParams } from 'react-router-dom';
-import {
-  fetchNextArticlesPage,
-} from '../../model/services/fetch-next-articles-page/fetch-next-articles-page';
 import { initArticlesPage } from '../../model/services/init-articles-page/init-articles-page';
-import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articles-page-selectors';
-import s from './articles-page.module.scss';
-import { articlesPageReducer, getArticles } from '../../model/slices/articles-page-slice';
+import { fetchNextArticlesPage } from '../../model/services/fetch-next-articles-page/fetch-next-articles-page';
+import { getArticlesPageIsLoading } from '../../model/selectors/articles-page-selectors';
 import ArticlesPageFilters from '../articles-page-filters/articles-page-filters';
+import { articlesPageReducer } from '../../model/slices/articles-page-slice';
+import s from './articles-page.module.scss';
+import ArticleInfiniteList from '../article-infinite-list/article-infinite-list';
 
 interface ArticlesPageProps {
   className?: string;
@@ -26,12 +24,8 @@ const reducers: ReducerList = {
 
 export function ArticlesPage({ className }: ArticlesPageProps): JSX.Element {
   const dispatch = useAppDispatch();
-  const articles = useSelector(getArticles.selectAll);
-  const view = useSelector(getArticlesPageView);
   const isLoading = useSelector(getArticlesPageIsLoading);
   const [searchParams] = useSearchParams();
-
-  // lesson 56 26:03
 
   const onLoadNextPart = useCallback(() => {
     if (!isLoading) {
@@ -50,12 +44,7 @@ export function ArticlesPage({ className }: ArticlesPageProps): JSX.Element {
         onScrollEnd={onLoadNextPart}
       >
         <ArticlesPageFilters />
-        <ArticleList
-          isLoading={isLoading}
-          view={view}
-          articles={articles}
-          className={s.list}
-        />
+        <ArticleInfiniteList className={s.list} />
       </Page>
     </DynamicModuleLoader>
   );

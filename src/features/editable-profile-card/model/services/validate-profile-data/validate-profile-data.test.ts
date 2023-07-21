@@ -1,7 +1,7 @@
 import { Country } from 'entities/country';
 import { Currency } from 'entities/currency';
 import avatar from 'shared/assets/tests/stories.jpg';
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editable-profile-card-schema';
 import { validateProfileData } from './validate-profile-data';
 
 const data = {
