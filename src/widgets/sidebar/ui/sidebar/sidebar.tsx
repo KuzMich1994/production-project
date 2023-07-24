@@ -13,7 +13,7 @@ interface SidebarProps {
   className?: string;
 }
 
-export function Sidebar({ className }: SidebarProps): JSX.Element {
+function Sidebar({ className }: SidebarProps): JSX.Element {
   const [collapsed, setCollapsed] = useState(false);
 
   const handleToggle = () => setCollapsed((prevState) => !prevState);

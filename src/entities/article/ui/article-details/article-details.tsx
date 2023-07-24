@@ -13,8 +13,7 @@ import Icon from 'shared/ui/icon/icon';
 import { HStack, VStack } from 'shared/ui/stack';
 import { fetchArticleById } from '../../model/services/fetch-article-by-id/fetch-article-by-id';
 import ArticleCodeBlockComponent from '../article-code-block-component/article-code-block-component';
-import ArticleImageBlockComponent
-  from '../article-image-block-component/article-image-block-component';
+import ArticleImageBlockComponent from '../article-image-block-component/article-image-block-component';
 import ArticleTextBlockComponent from '../article-text-block-component/article-text-block-component';
 import {
   getArticleDetailsData,
@@ -27,7 +26,7 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducerList = {

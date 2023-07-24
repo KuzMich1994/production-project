@@ -1,9 +1,7 @@
 import { classNames } from 'shared/lib/class-names/class-names';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { ArticleDetails } from 'entities/article';
 import { useParams } from 'react-router-dom';
-import Text from 'shared/ui/text/text';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import Page from 'widgets/page/page';
 import { VStack } from 'shared/ui/stack';
@@ -22,16 +20,7 @@ const reducerList: ReducerList = {
 };
 
 function ArticleDetailsPage({ className }: ArticleDetailsPageProps): JSX.Element {
-  const { t } = useTranslation('article');
   const { id } = useParams<{id: string}>();
-
-  if (!id) {
-    return (
-      <Page className={classNames(s.articleDetailsPage, {}, [className])}>
-        <Text title={t('Статья не найдена').toString()} />
-      </Page>
-    );
-  }
 
   return (
     <DynamicModuleLoader reducerList={reducerList}>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/store-decorator/store-decorator';
 import ForbiddenPage from './forbidden-page';
 
 export default {
-  title: 'shared/ForbiddenPage',
+  title: 'pages/ForbiddenPage',
   component: ForbiddenPage,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -14,3 +15,4 @@ const Template: ComponentStory<typeof ForbiddenPage> = (args) => <ForbiddenPage 
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [StoreDecorator({})];

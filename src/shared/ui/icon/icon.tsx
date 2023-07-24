@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/class-names/class-names';
-import React, { memo } from 'react';
+import React, { memo, ReactElement, SVGProps } from 'react';
 import s from './icon.module.scss';
 
 interface IconProps {
   className?: string;
-  Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+  Svg: (props: SVGProps<SVGElement>) => ReactElement;
 }
 
 function Icon({ className, Svg }: IconProps): JSX.Element {
