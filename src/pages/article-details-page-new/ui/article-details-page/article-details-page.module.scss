@@ -1,0 +1,17 @@
+.article-details-page {
+  min-height: 100%;
+}
+
+.recommendations {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  & > div {
+    flex-shrink: 0;
+    width: 230px;
+  }
+}

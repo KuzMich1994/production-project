@@ -1,14 +1,14 @@
 import { RouteProps } from 'react-router-dom';
 import { MainPage } from 'pages/main-page';
+import { UserRole } from 'entities/user';
 import { AboutPage } from 'pages/about';
-import { NotFoundPage } from 'pages/not-found-page';
 import { ProfilePage } from 'pages/profile-page';
 import { ArticlesPage } from 'pages/articles-page';
-import { ArticleDetailsPage } from 'pages/article-details-page';
 import { ArticleEditPage } from 'pages/article-edit-page';
 import { AdminPanelPage } from 'pages/admin-panel-page';
-import { UserRole } from 'entities/user';
 import { ForbiddenPage } from 'pages/forbidden-page';
+import { NotFoundPage } from 'pages/not-found-page';
+import { ArticleDetailsPageNew } from 'pages/article-details-page-new';
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean;
@@ -34,8 +34,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: `/${AppRoutes.ABOUT}`,
   [AppRoutes.PROFILE]: `/${AppRoutes.PROFILE}/`,
-  [AppRoutes.ARTICLES]: `/${AppRoutes.ARTICLES}`,
-  [AppRoutes.ARTICLE_DETAILS]: `/${AppRoutes.ARTICLES}/`, // + :id
+  [AppRoutes.ARTICLES]: '/articles',
+  [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
   [AppRoutes.ARTICLE_CREATE]: `/${AppRoutes.ARTICLES}/new`,
   [AppRoutes.ARTICLE_EDIT]: `/${AppRoutes.ARTICLES}/:id/edit`,
   [AppRoutes.ADMIN_PANEL]: '/admin/',
@@ -64,7 +64,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   },
   [AppRoutes.ARTICLE_DETAILS]: {
     path: `${RoutePath.article_details}:id`,
-    element: <ArticleDetailsPage />,
+    element: <ArticleDetailsPageNew />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE_EDIT]: {
