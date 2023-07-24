@@ -96,6 +96,7 @@ function EditableProfileCard(props: EditableProfileCardProps): JSX.Element {
                 key={err}
                 theme={TextTheme.ERROR}
                 text={validateErrorsTranslates[err]}
+                data-testid="EditableProfileCard.Error"
               />
             )) : null
         }

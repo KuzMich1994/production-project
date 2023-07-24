@@ -16,7 +16,7 @@ function ArticleRecommendationsList(props: ArticleRecommendationsListProps): JSX
   const { t } = useTranslation();
   const { isLoading, data, error } = useGetArticleRecommendationsList(3);
 
-  if (isLoading || error) {
+  if (isLoading || error || !data) {
     return null;
   }
 

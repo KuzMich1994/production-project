@@ -28,6 +28,7 @@ interface TextProps {
   align?: TextAlign;
   size?: TextSize;
   hasElementTitle?: boolean;
+  'data-testid'?: string;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3';
@@ -46,6 +47,7 @@ function Text(props: TextProps): JSX.Element {
     align = TextAlign.LEFT,
     size = TextSize.M,
     hasElementTitle,
+    'data-testid': dataTestid = 'Text',
   } = props;
 
   const HeaderTag = mapSizeToHeaderTag[size];
@@ -58,10 +60,27 @@ function Text(props: TextProps): JSX.Element {
   return (
     <div className={classNames(s.text, mods, [className, s[theme]])}>
       {
-        title && <HeaderTag title={hasElementTitle ? title : undefined} className={s.title}>{title}</HeaderTag>
+        title
+        && (
+          <HeaderTag
+            title={hasElementTitle ? title : undefined}
+            className={s.title}
+            data-testid={`${dataTestid}.Header`}
+          >
+            {title}
+          </HeaderTag>
+        )
       }
       {
-        text && <p title={hasElementTitle ? text : undefined} className={s.text}>{text}</p>
+        text && (
+          <p
+            title={hasElementTitle ? text : undefined}
+            className={s.text}
+            data-testid={`${dataTestid}.Paragraph`}
+          >
+            {text}
+          </p>
+        )
       }
     </div>
   );

@@ -85,6 +85,7 @@ export function ProfileCard(props: ProfileCardProps): JSX.Element {
         placeholder={t('Ваше имя').toString()}
         className={s.input}
         onChange={onChangeFirstName}
+        data-testid="ProfileCard.FirstName"
       />
       <Input
         readonly={readonly}
@@ -92,6 +93,7 @@ export function ProfileCard(props: ProfileCardProps): JSX.Element {
         placeholder={t('Ваша фамилия').toString()}
         className={s.input}
         onChange={onChangeLastName}
+        data-testid="ProfileCard.LastName"
       />
       <Input
         readonly={readonly}
@@ -99,6 +101,7 @@ export function ProfileCard(props: ProfileCardProps): JSX.Element {
         placeholder={t('Ваш возраст').toString()}
         className={s.input}
         onChange={onChangeAge}
+        data-testid="ProfileCard.Age"
       />
       <Input
         readonly={readonly}
@@ -106,6 +109,7 @@ export function ProfileCard(props: ProfileCardProps): JSX.Element {
         placeholder={t('Ваш город').toString()}
         className={s.input}
         onChange={onChangeCity}
+        data-testid="ProfileCard.City"
       />
       <Input
         readonly={readonly}
@@ -113,6 +117,7 @@ export function ProfileCard(props: ProfileCardProps): JSX.Element {
         placeholder={t('Ваш username').toString()}
         className={s.input}
         onChange={onChangeUsername}
+        data-testid="ProfileCard.Username"
       />
       <Input
         readonly={readonly}
@@ -120,6 +125,7 @@ export function ProfileCard(props: ProfileCardProps): JSX.Element {
         placeholder={t('Ваш аватар').toString()}
         className={s.input}
         onChange={onChangeAvatar}
+        data-testid="ProfileCard.Avatar"
       />
       <CurrencySelect
         className={s.input}
