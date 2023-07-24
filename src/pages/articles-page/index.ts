@@ -4,6 +4,6 @@ import { ArticlesPageSchema } from './model/types/article-page-schema';
 
 export {
   ArticlesPageAsync as ArticlesPage,
-  ArticlesPageSchema,
+  type ArticlesPageSchema,
   ArticlesPageFilters,
 };

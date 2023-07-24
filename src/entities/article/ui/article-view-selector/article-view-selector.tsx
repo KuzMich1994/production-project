@@ -5,7 +5,7 @@ import ListIcon from 'shared/assets/icons/list.svg';
 import Button, { ButtonTheme } from 'shared/ui/button/button';
 import Icon from 'shared/ui/icon/icon';
 import { nanoid } from '@reduxjs/toolkit';
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
 import s from './article-view-selector.module.scss';
 
 interface ArticleViewSelectorProps {

@@ -3,7 +3,8 @@ import { Currency } from 'entities/currency';
 import avatar from 'shared/assets/tests/stories.jpg';
 import { updateProfileData } from '../services/update-profile-data/update-profile-data';
 import { profileActions, profileReducer } from './profile-slice';
-import { ProfileSchema, ValidateProfileError } from '../types/editable-profile-card-schema';
+import { ProfileSchema } from '../types/editable-profile-card-schema';
+import { ValidateProfileError } from '../consts/consts';
 
 const data = {
   username: 'admin',

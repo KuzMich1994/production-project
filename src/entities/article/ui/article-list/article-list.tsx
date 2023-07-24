@@ -3,10 +3,11 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import Text, { TextSize } from 'shared/ui/text/text';
 import { useTranslation } from 'react-i18next';
+import { ArticleView } from '../../model/consts/consts';
 import ArticleListItemSkeleton from '../article-list-item/article-list-item-skeleton';
 import ArticleListItem from '../article-list-item/article-list-item';
 import s from './article-list.module.scss';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 
 interface ArticleListProps {
   className?: string;

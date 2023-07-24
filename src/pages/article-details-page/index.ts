@@ -6,8 +6,11 @@ import { ArticleDetailsPageSchema } from './model/types/index';
 
 export {
   ArticleDetailsPage,
+  articleDetailsPageReducer,
+};
+
+export type {
   ArticleDetailsCommentsSchema,
   ArticleDetailsRecommendationsSchema,
   ArticleDetailsPageSchema,
-  articleDetailsPageReducer,
 };

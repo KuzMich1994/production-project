@@ -4,7 +4,7 @@ import { profileReducer } from './model/slice/profile-slice';
 
 export {
   EditableProfileCard,
-  ProfileSchema,
+  type ProfileSchema,
   profileReducer,
 };
-export { ValidateProfileError } from 'features/editable-profile-card/model/types/editable-profile-card-schema';
+export { ValidateProfileError } from './model/consts/consts';

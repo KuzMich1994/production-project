@@ -8,10 +8,9 @@ import { Avatar } from 'shared/ui/avatar/avatar';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/route-config/route-config';
 import AppLink from 'shared/ui/app-link/app-link';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import ArticleTextBlockComponent from '../article-text-block-component/article-text-block-component';
-import {
-  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
-} from '../../model/types/article';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import s from './article-list-item.module.scss';
 
 interface ArticleListItemProps {

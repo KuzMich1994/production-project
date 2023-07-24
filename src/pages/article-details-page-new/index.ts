@@ -6,8 +6,8 @@ import { ArticleDetailsPageSchema } from './model/types';
 
 export {
   ArticleDetailsPageNew,
-  ArticleDetailsCommentsSchema,
-  ArticleDetailsRecommendationsSchema,
-  ArticleDetailsPageSchema,
+  type ArticleDetailsCommentsSchema,
+  type ArticleDetailsRecommendationsSchema,
+  type ArticleDetailsPageSchema,
   articleDetailsPageReducer,
 };
