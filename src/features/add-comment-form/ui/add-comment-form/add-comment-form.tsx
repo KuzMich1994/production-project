@@ -46,6 +46,7 @@ function AddCommentForm({ className, onSendComment }: AddCommentFormProps): JSX.
         <Button
           theme={ButtonTheme.OUTLINE}
           onClick={onSendHandler}
+          disabled={text === ''}
         >
           {t('Отправить')}
         </Button>
