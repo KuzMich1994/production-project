@@ -32,12 +32,12 @@ export enum AppRoutes {
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
-  [AppRoutes.ABOUT]: `/${AppRoutes.ABOUT}`,
-  [AppRoutes.PROFILE]: `/${AppRoutes.PROFILE}/`,
+  [AppRoutes.ABOUT]: '/about',
+  [AppRoutes.PROFILE]: '/profile/',
   [AppRoutes.ARTICLES]: '/articles',
   [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
-  [AppRoutes.ARTICLE_CREATE]: `/${AppRoutes.ARTICLES}/new`,
-  [AppRoutes.ARTICLE_EDIT]: `/${AppRoutes.ARTICLES}/:id/edit`,
+  [AppRoutes.ARTICLE_CREATE]: '/articles/new',
+  [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
   [AppRoutes.ADMIN_PANEL]: '/admin/',
   [AppRoutes.FORBIDDEN]: '/forbidden/',
   [AppRoutes.NOT_FOUND]: '*',

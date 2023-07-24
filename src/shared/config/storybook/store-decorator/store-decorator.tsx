@@ -5,7 +5,7 @@ import { profileReducer } from 'features/editable-profile-card';
 import { ReducerList } from 'shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { articleDetailsReducer } from 'entities/article/model/slice/article-details-slice';
 import { addCommentFormReducer } from 'features/add-comment-form/model/slices/add-comment-form-slice';
-import { articleDetailsPageReducer } from 'pages/article-details-page';
+import { articleDetailsPageReducer } from 'pages/article-details-page-new';
 
 const defaultAsyncReducers: ReducerList = {
   login: loginReducer,

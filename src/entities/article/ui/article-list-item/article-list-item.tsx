@@ -6,7 +6,6 @@ import Icon from 'shared/ui/icon/icon';
 import Card from 'shared/ui/card/card';
 import { Avatar } from 'shared/ui/avatar/avatar';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/route-config/route-config';
 import AppLink from 'shared/ui/app-link/app-link';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import ArticleTextBlockComponent from '../article-text-block-component/article-text-block-component';
@@ -63,7 +62,7 @@ function ArticleListItem(props: ArticleListItemProps): JSX.Element {
             <AppLink
               className={s.linkButton}
               target={target}
-              to={`${RoutePath.article_details}${article.id}`}
+              to={`/articles/${article.id}`}
             >
               {t('Читать далее...')}
             </AppLink>
@@ -77,7 +76,7 @@ function ArticleListItem(props: ArticleListItemProps): JSX.Element {
   return (
     <AppLink
       target={target}
-      to={`${RoutePath.article_details}${article.id}`}
+      to={`/articles/${article.id}`}
       className={classNames(s.articleListItem, {}, [className, s[view.toLowerCase()]])}
     >
       <Card

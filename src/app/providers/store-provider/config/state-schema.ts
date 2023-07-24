@@ -7,7 +7,7 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/article';
-import { ArticleDetailsPageSchema } from 'pages/article-details-page';
+import { ArticleDetailsPageSchema } from 'pages/article-details-page-new';
 import { AddCommentFormSchema } from 'features/add-comment-form';
 import { ArticlesPageSchema } from 'pages/articles-page';
 import { ScrollSaveSchema } from 'features/scroll-save';
