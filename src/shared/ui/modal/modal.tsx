@@ -1,11 +1,10 @@
 import { classNames, Mods } from 'shared/lib/class-names/class-names';
-import React, {
-  MutableRefObject, PropsWithChildren, useCallback, useEffect, useRef, useState,
-} from 'react';
+import React, { PropsWithChildren } from 'react';
 import { useTheme } from 'app/providers/theme-provider';
 import Overlay from '../overlay/overlay';
 import { Portal } from '../portal/portal';
 import s from './modal.module.scss';
+import { useModal } from '../../lib/hooks/use-modal/use-modal';
 
 interface ModalProps {
   className?: string;
@@ -17,43 +16,10 @@ interface ModalProps {
 export function Modal({
   className, children, isOpen, onClose, lazy,
 }: PropsWithChildren<ModalProps>): JSX.Element | null {
-  const [isClosing, setIsClosing] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const { theme } = useTheme();
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
-
-  const closeHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, 300);
-    }
-  }, [onClose]);
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler();
-    }
-  }, [closeHandler]);
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
-    }
-
-    return () => {
-      clearTimeout(timerRef.current);
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [isOpen, onKeyDown]);
+  const { isClosing, close, isMounted } = useModal({
+    onClose, lazy, isOpen, animationDelay: 300,
+  });
 
   const mods: Mods = {
     [s.opened]: isOpen,
@@ -67,7 +33,7 @@ export function Modal({
   return (
     <Portal>
       <div className={classNames(s.modal, mods, [className, theme, 'app-modal'])}>
-        <Overlay onClick={closeHandler} />
+        <Overlay onClick={close} />
         <div
           className={s.content}
         >
