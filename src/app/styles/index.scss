@@ -5,7 +5,8 @@
 @import "./variables/global";
 
 .app,
-.app-modal {
+.app-modal,
+.app-drawer {
   font: var(--font-m);
   color: var(--primary-color);
 }

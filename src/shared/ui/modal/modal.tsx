@@ -1,9 +1,9 @@
 import { classNames, Mods } from 'shared/lib/class-names/class-names';
 import React, {
-  MutableRefObject,
-  PropsWithChildren, useCallback, useEffect, useRef, useState,
+  MutableRefObject, PropsWithChildren, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { useTheme } from 'app/providers/theme-provider';
+import Overlay from '../overlay/overlay';
 import { Portal } from '../portal/portal';
 import s from './modal.module.scss';
 
@@ -21,10 +21,6 @@ export function Modal({
   const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const { theme } = useTheme();
-
-  const onContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
 
   useEffect(() => {
     if (isOpen) {
@@ -71,13 +67,11 @@ export function Modal({
   return (
     <Portal>
       <div className={classNames(s.modal, mods, [className, theme, 'app-modal'])}>
-        <div className={s.overlay} onClick={closeHandler}>
-          <div
-            className={s.content}
-            onClick={onContentClick}
-          >
-            {children}
-          </div>
+        <Overlay onClick={closeHandler} />
+        <div
+          className={s.content}
+        >
+          {children}
         </div>
       </div>
     </Portal>
