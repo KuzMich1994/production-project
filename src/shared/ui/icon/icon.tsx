@@ -5,11 +5,12 @@ import s from './icon.module.scss';
 interface IconProps {
   className?: string;
   Svg: (props: SVGProps<SVGElement>) => ReactElement;
+  inverted?: boolean;
 }
 
-function Icon({ className, Svg }: IconProps): JSX.Element {
+function Icon({ className, Svg, inverted }: IconProps): JSX.Element {
   return (
-    <Svg className={classNames(s.icon, {}, [className])} />
+    <Svg className={classNames(inverted ? s.inverted : s.icon, {}, [className])} />
   );
 }
 

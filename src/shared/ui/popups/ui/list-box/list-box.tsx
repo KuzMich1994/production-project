@@ -3,9 +3,11 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/class-names/class-names';
 import { nanoid } from '@reduxjs/toolkit';
 import { DropdownDirection } from 'shared/types/ui';
-import Button from '../button/button';
+import Button from '../../../button/button';
 import s from './list-box.module.scss';
-import { HStack } from '../stack/index';
+import popupCls from '../../styles/popup.module.scss';
+import { HStack } from '../../../stack';
+import { mapDirectionClass } from '../../styles/consts';
 
 export interface ListBoxItem {
   value: string;
@@ -23,13 +25,6 @@ interface ListBoxProps {
   direction?: DropdownDirection;
   label?: string;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'top left': s.optionsTopLeft,
-  'bottom left': s.optionsBottomLeft,
-  'top right': s.optionsTopRight,
-  'bottom right': s.optionsBottomRight,
-};
 
 function ListBox(props: ListBoxProps) {
   const {
@@ -54,9 +49,9 @@ function ListBox(props: ListBoxProps) {
         value={value}
         defaultValue={defaultValue}
         onChange={onChange}
-        className={classNames(s.listBox, { [s.readonly]: readonly }, [className])}
+        className={classNames(s.listBox, { [s.readonly]: readonly }, [className, popupCls.popup])}
       >
-        <HListBox.Button className={s.trigger}>
+        <HListBox.Button className={popupCls.trigger}>
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>
@@ -74,9 +69,9 @@ function ListBox(props: ListBoxProps) {
                   className={classNames(
                     s.option,
                     {
-                      [s.active]: active,
+                      [popupCls.active]: active,
                       [s.selected]: selected,
-                      [s.disabled]: item.disabled,
+                      [popupCls.disabled]: item.disabled,
                     },
                   )}
                 >

@@ -1,0 +1,19 @@
+.list-box {
+  position: relative;
+}
+
+.options {
+  position: absolute;
+  z-index: 10000;
+  min-width: 100%;
+  width: max-content;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px var(--card-bg);
+  overflow: hidden;
+}
+
+.option {
+  padding: 10px 20px;
+  cursor: pointer;
+}

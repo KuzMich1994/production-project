@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import ListBox from 'shared/ui/list-box/list-box';
+import ListBox from 'shared/ui/popups/ui/list-box/list-box';
 import { Country } from '../model/types/country';
 
 interface CountrySelectStoriesProps {
