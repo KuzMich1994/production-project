@@ -10,6 +10,7 @@ export enum CardTheme {
 interface CardProps extends HTMLAttributes<HTMLDivElement>{
   className?: string;
   theme?: CardTheme;
+  fullWidth?: boolean;
 }
 
 function Card(props: PropsWithChildren<CardProps>): JSX.Element {
@@ -17,12 +18,13 @@ function Card(props: PropsWithChildren<CardProps>): JSX.Element {
     className,
     children,
     theme = CardTheme.NORMAL,
+    fullWidth,
     ...otherProps
   } = props;
 
   return (
     <div
-      className={classNames(s.card, {}, [className, s[theme]])}
+      className={classNames(s.card, { [s.fullWidth]: fullWidth }, [className, s[theme]])}
       {...otherProps}
     >
       {children}

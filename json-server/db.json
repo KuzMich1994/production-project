@@ -1137,5 +1137,85 @@
       "username": "user",
       "avatar": "https://sun9-3.userapi.com/impf/tg8ykCDuF-4ppIjey-Tdk4wD91S2QrMR5rfL7A/rQTs3xEQG0U.jpg?size=720x960&quality=96&sign=39d5e6c673160d6cbdd0c777e60c8258&type=album"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "id": "3",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "3"
+    },
+    {
+      "id": "4",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "4"
+    },
+    {
+      "rate": 3,
+      "articleId": "16",
+      "feedback": "asfasf",
+      "userId": "1",
+      "id": "isTMRfF"
+    },
+    {
+      "rate": 5,
+      "articleId": "11",
+      "userId": "1",
+      "id": "j3vrxoA"
+    },
+    {
+      "rate": 2,
+      "articleId": "7",
+      "feedback": "GOVNO",
+      "userId": "1",
+      "id": "xRdUXr7"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "3",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "4",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "profileId": "1"
+    }
   ]
 }

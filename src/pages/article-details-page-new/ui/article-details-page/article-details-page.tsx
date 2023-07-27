@@ -10,6 +10,7 @@ import s from './article-details-page.module.scss';
 import { articleDetailsPageReducer } from '../../model/slice';
 import ArticleDetailsPageHeader from '../article-details-page-header/article-details-page-header';
 import ArticleDetailsComments from '../article-details-comments/article-details-comments';
+import { ArticleRating } from '@/features/article-rating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -19,8 +20,12 @@ const reducerList: ReducerList = {
   articleDetailsPage: articleDetailsPageReducer,
 };
 
-function ArticleDetailsPage({ className }: ArticleDetailsPageProps): JSX.Element {
+function ArticleDetailsPage({ className }: ArticleDetailsPageProps) {
   const { id } = useParams<{id: string}>();
+
+  if (!id) {
+    return null;
+  }
 
   return (
     <DynamicModuleLoader reducerList={reducerList} removeAfterUnmount>
@@ -28,6 +33,7 @@ function ArticleDetailsPage({ className }: ArticleDetailsPageProps): JSX.Element
         <VStack gap="32" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
