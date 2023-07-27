@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArticleDetailsPageHeader from './article-details-page-header';
 
 export default {
-  title: 'shared/ui/ArticleDetailsPageHeader',
+  title: 'pages/articleDetails/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -1,10 +1,13 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import withMock from 'storybook-addon-mock';
 import ArticleRating from './article-rating';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator/store-decorator';
 
 export default {
-  title: 'shared/ui/ArticleRating',
+  title: 'features/ArticleRating',
   component: ArticleRating,
+  decorators: [withMock],
   argTypes: {
     backgroundColor: { control: 'color' },
   },
@@ -13,4 +16,53 @@ export default {
 const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  articleId: '1',
+};
+
+Normal.decorators = [
+  StoreDecorator({
+    user: {
+      authData: { id: '1' },
+    },
+  }),
+];
+
+Normal.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/article-ratings?userId=1&articleId=1`,
+      method: 'GET',
+      status: 200,
+      response: [
+        {
+          rate: 4,
+        },
+      ],
+    },
+  ],
+};
+
+export const WithoutRate = Template.bind({});
+WithoutRate.args = {
+  articleId: '1',
+};
+
+WithoutRate.decorators = [
+  StoreDecorator({
+    user: {
+      authData: { id: '1' },
+    },
+  }),
+];
+
+WithoutRate.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/article-ratings?userId=1&articleId=1`,
+      method: 'GET',
+      status: 200,
+      response: [],
+    },
+  ],
+};

@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/store-decorator/store-
 import AdminPanelPage from './admin-panel-page';
 
 export default {
-  title: 'shared/AdminPanelPage',
+  title: 'pages/AdminPanelPage',
   component: AdminPanelPage,
   argTypes: {
     backgroundColor: { control: 'color' },

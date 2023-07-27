@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArticlesPage from './articles-page';
 
 export default {
-  title: 'pages/ArticlesPage',
+  title: 'pages/articlesPage/ArticlesPage',
   component: ArticlesPage,
   argTypes: {
     backgroundColor: { control: 'color' },
