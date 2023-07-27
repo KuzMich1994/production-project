@@ -3,7 +3,7 @@ import {
 } from 'react';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { useTheme } from '@/app/providers/theme-provider';
-import { useAnimationLibs } from '@/shared/lib/components/animation-provider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/animation-provider';
 import Overlay from '../overlay/overlay';
 import s from './drawer.module.scss';
 import { Portal } from '../portal/portal';
@@ -94,14 +94,24 @@ function DrawerContent(props: PropsWithChildren<DrawerProps>) {
   );
 }
 
-function Drawer(props: PropsWithChildren<DrawerProps>) {
+function DrawerAsync(props: PropsWithChildren<DrawerProps>) {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
     return null;
   }
 
-  return <DrawerContent {...props} />;
+  return (
+    <DrawerContent {...props} />
+  );
 }
 
-export default memo(Drawer);
+function Drawer(props: PropsWithChildren<DrawerProps>) {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  );
+}
+
+export default Drawer;

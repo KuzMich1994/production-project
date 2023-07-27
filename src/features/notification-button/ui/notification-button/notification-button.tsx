@@ -7,7 +7,6 @@ import { NotificationList } from '@/entities/notification';
 import { Popover } from '@/shared/ui/popups';
 import Button, { ButtonTheme } from '@/shared/ui/button/button';
 import Drawer from '@/shared/ui/drawer/drawer';
-import { AnimationProvider } from '@/shared/lib/components/animation-provider';
 import s from './notification-button.module.scss';
 
 interface NotificationButtonProps {
@@ -42,11 +41,9 @@ function NotificationButton(props: NotificationButtonProps) {
       </BrowserView>
       <MobileView>
         {trigger}
-        <AnimationProvider>
-          <Drawer onClose={onToggleDrawer} isOpen={isOpen}>
-            <NotificationList />
-          </Drawer>
-        </AnimationProvider>
+        <Drawer onClose={onToggleDrawer} isOpen={isOpen}>
+          <NotificationList />
+        </Drawer>
       </MobileView>
     </>
   );
