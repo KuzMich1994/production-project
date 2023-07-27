@@ -1,7 +1,7 @@
-import { StateSchema } from 'app/providers/store-provider';
-import { Country } from 'entities/country';
-import { Currency } from 'entities/currency';
-import avatar from 'shared/assets/tests/stories.jpg';
+import { StateSchema } from '@/app/providers/store-provider';
+import { Country } from '@/entities/country';
+import { Currency } from '@/entities/currency';
+import avatar from '@/shared/assets/tests/stories.jpg';
 import { getProfileForm } from './get-profile-form';
 
 describe('getProfileFormTest', () => {

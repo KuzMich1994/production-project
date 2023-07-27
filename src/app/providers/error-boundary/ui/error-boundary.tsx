@@ -1,6 +1,6 @@
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
-import { PageError } from 'widgets/page-error';
-import { Loader } from 'shared/ui/loader/loader';
+import { PageError } from '@/widgets/page-error';
+import { Loader } from '@/shared/ui/loader/loader';
 
 interface ErrorBoundaryProps {
   children: ReactNode;

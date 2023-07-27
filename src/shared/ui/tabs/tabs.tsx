@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/class-names/class-names';
 import { ReactNode, useCallback } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
+import { classNames } from '@/shared/lib/class-names/class-names';
 import Card, { CardTheme } from '../card/card';
 import s from './tabs.module.scss';
 

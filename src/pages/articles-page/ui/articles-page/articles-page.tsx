@@ -1,11 +1,11 @@
-import { classNames } from 'shared/lib/class-names/class-names';
 import { memo, useCallback } from 'react';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/dynamic-module-loader/dynamic-module-loader';
-import Page from 'widgets/page/page';
-import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/use-initial-effect/use-initial-effect';
 import { useSearchParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/class-names/class-names';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
+import Page from '@/widgets/page/page';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/use-app-dispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/use-initial-effect/use-initial-effect';
 import { initArticlesPage } from '../../model/services/init-articles-page/init-articles-page';
 import { fetchNextArticlesPage } from '../../model/services/fetch-next-articles-page/fetch-next-articles-page';
 import { getArticlesPageIsLoading } from '../../model/selectors/articles-page-selectors';

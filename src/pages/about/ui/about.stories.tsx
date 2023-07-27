@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ThemeDecorator } from 'shared/config/storybook/theme-decorator/theme-decorator';
-import { Theme } from 'app/providers/theme-provider';
-import { StoreDecorator } from 'shared/config/storybook/store-decorator/store-decorator';
+import { ThemeDecorator } from '@/shared/config/storybook/theme-decorator/theme-decorator';
+import { Theme } from '@/app/providers/theme-provider';
+import { StoreDecorator } from '@/shared/config/storybook/store-decorator/store-decorator';
 import AboutPage from './about';
 
 export default {

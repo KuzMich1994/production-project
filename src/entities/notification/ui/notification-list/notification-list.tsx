@@ -1,8 +1,7 @@
-import { classNames } from 'shared/lib/class-names/class-names';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { VStack } from 'shared/ui/stack';
-import Skeleton from 'shared/ui/skeleton/skeleton';
+import { classNames } from '@/shared/lib/class-names/class-names';
+import { VStack } from '@/shared/ui/stack';
+import Skeleton from '@/shared/ui/skeleton/skeleton';
 import { useNotifications } from '../../api/notification-api';
 import s from './notification-list.module.scss';
 import NotificationItem from '../notification-item/notification-item';
@@ -11,9 +10,7 @@ interface NotificationListProps {
   className?: string;
 }
 
-function NotificationList({ className }: NotificationListProps): JSX.Element {
-  const { t } = useTranslation();
-
+function NotificationList({ className }: NotificationListProps) {
   const { data, isLoading } = useNotifications(null, {
     pollingInterval: 5000,
   });

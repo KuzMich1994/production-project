@@ -1,8 +1,8 @@
 import { Menu } from '@headlessui/react';
 import { Fragment, memo, ReactNode } from 'react';
-import { classNames } from 'shared/lib/class-names/class-names';
-import { DropdownDirection } from 'shared/types/ui';
 import { nanoid } from '@reduxjs/toolkit';
+import { classNames } from '@/shared/lib/class-names/class-names';
+import { DropdownDirection } from '@/shared/types/ui';
 import AppLink from '../../../app-link/app-link';
 import s from './dropdown.module.scss';
 import popupCls from '../../styles/popup.module.scss';

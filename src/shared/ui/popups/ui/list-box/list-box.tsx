@@ -1,8 +1,8 @@
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
-import { classNames } from 'shared/lib/class-names/class-names';
 import { nanoid } from '@reduxjs/toolkit';
-import { DropdownDirection } from 'shared/types/ui';
+import { classNames } from '@/shared/lib/class-names/class-names';
+import { DropdownDirection } from '@/shared/types/ui';
 import Button from '../../../button/button';
 import s from './list-box.module.scss';
 import popupCls from '../../styles/popup.module.scss';

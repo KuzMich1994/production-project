@@ -1,6 +1,6 @@
-import { Country } from 'entities/country';
-import { Currency } from 'entities/currency';
-import avatar from 'shared/assets/tests/stories.jpg';
+import { Country } from '@/entities/country';
+import { Currency } from '@/entities/currency';
+import avatar from '@/shared/assets/tests/stories.jpg';
 import { updateProfileData } from '../services/update-profile-data/update-profile-data';
 import { profileActions, profileReducer } from './profile-slice';
 import { ProfileSchema } from '../types/editable-profile-card-schema';

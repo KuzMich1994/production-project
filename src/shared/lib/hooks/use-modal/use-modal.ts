@@ -11,7 +11,6 @@ interface UseModalProps {
 export function useModal(props: UseModalProps) {
   const {
     onClose,
-    lazy,
     animationDelay = 300,
     isOpen,
   } = props;

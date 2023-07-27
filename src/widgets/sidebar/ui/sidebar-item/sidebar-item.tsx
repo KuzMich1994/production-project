@@ -1,10 +1,9 @@
-import AppLink, { AppLinkTheme } from 'shared/ui/app-link/app-link';
-
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { classNames } from 'shared/lib/class-names/class-names';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/user';
+import { getUserAuthData } from '@/entities/user';
+import { classNames } from '@/shared/lib/class-names/class-names';
+import AppLink, { AppLinkTheme } from '@/shared/ui/app-link/app-link';
 import { SidebarItemType } from '../../model/types/sidebar';
 import s from './sidebar-item.module.scss';
 

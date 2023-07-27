@@ -1,6 +1,6 @@
-import { classNames, Mods } from 'shared/lib/class-names/class-names';
 import { ChangeEvent, useMemo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
+import { classNames, Mods } from '@/shared/lib/class-names/class-names';
 import s from './select.module.scss';
 
 export interface SelectOption<T extends string> {

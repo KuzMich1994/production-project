@@ -1,6 +1,6 @@
-import { classNames, Mods } from 'shared/lib/class-names/class-names';
 import React, { PropsWithChildren } from 'react';
-import { useTheme } from 'app/providers/theme-provider';
+import { classNames, Mods } from '@/shared/lib/class-names/class-names';
+import { useTheme } from '@/app/providers/theme-provider';
 import Overlay from '../overlay/overlay';
 import { Portal } from '../portal/portal';
 import s from './modal.module.scss';

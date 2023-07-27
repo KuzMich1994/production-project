@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/class-names/class-names';
 import {
   memo, PropsWithChildren, useCallback, useEffect,
 } from 'react';
-import { useTheme } from 'app/providers/theme-provider';
-import { useAnimationLibs } from 'shared/lib/components/animation-provider';
+import { classNames } from '@/shared/lib/class-names/class-names';
+import { useTheme } from '@/app/providers/theme-provider';
+import { useAnimationLibs } from '@/shared/lib/components/animation-provider';
 import Overlay from '../overlay/overlay';
 import s from './drawer.module.scss';
 import { Portal } from '../portal/portal';
@@ -26,7 +26,6 @@ function DrawerContent(props: PropsWithChildren<DrawerProps>) {
     children,
     onClose,
     isOpen,
-    lazy,
   } = props;
 
   const openDrawer = useCallback(() => {

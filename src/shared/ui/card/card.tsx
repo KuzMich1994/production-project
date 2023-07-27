@@ -1,5 +1,5 @@
-import { classNames } from 'shared/lib/class-names/class-names';
 import { HTMLAttributes, memo, PropsWithChildren } from 'react';
+import { classNames } from '@/shared/lib/class-names/class-names';
 import s from './card.module.scss';
 
 export enum CardTheme {

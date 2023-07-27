@@ -1,9 +1,8 @@
-import { classNames } from 'shared/lib/class-names/class-names';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import Card, { CardTheme } from 'shared/ui/card/card';
-import Text from 'shared/ui/text/text';
-import AppLink from 'shared/ui/app-link/app-link';
+import { classNames } from '@/shared/lib/class-names/class-names';
+import Card, { CardTheme } from '@/shared/ui/card/card';
+import Text from '@/shared/ui/text/text';
+import AppLink from '@/shared/ui/app-link/app-link';
 import { NotificationSchema } from '../../model/types/notification-schema';
 import s from './notification-item.module.scss';
 
@@ -12,9 +11,8 @@ interface NotificationItemProps {
   notification: NotificationSchema;
 }
 
-function NotificationItem(props: NotificationItemProps): JSX.Element {
+function NotificationItem(props: NotificationItemProps) {
   const { className, notification } = props;
-  const { t } = useTranslation();
 
   const content = (
     <Card

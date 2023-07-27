@@ -1,8 +1,8 @@
 import React, { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { PageLoader } from 'widgets/page-loader';
-import { AppRoutesProps, routeConfig } from 'shared/config/route-config/route-config';
-import RequireAuth from 'app/providers/router/ui/require-auth';
+import { PageLoader } from '@/widgets/page-loader';
+import { AppRoutesProps, routeConfig } from '@/shared/config/route-config/route-config';
+import RequireAuth from '@/app/providers/router/ui/require-auth';
 
 export function AppRouter() {
   const renderWithContainer = useCallback((route: AppRoutesProps) => {

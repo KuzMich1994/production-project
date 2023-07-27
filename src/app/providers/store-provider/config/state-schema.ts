@@ -1,18 +1,18 @@
-import { CounterSchema } from 'entities/counter';
-import { UserSchema } from 'entities/user';
-import { LoginSchema } from 'features/auth-by-username';
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import {
   AnyAction, CombinedState, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ArticleDetailsSchema } from 'entities/article';
-import { ArticleDetailsPageSchema } from 'pages/article-details-page-new';
-import { AddCommentFormSchema } from 'features/add-comment-form';
-import { ArticlesPageSchema } from 'pages/articles-page';
-import { ScrollSaveSchema } from 'features/scroll-save';
-import { rtkApi } from 'shared/api/rtk-api';
-import { ProfileSchema } from 'features/editable-profile-card';
+import { CounterSchema } from '@/entities/counter';
+import { UserSchema } from '@/entities/user';
+import { LoginSchema } from '@/features/auth-by-username';
+import { ArticleDetailsSchema } from '@/entities/article';
+import { ArticleDetailsPageSchema } from '@/pages/article-details-page-new';
+import { AddCommentFormSchema } from '@/features/add-comment-form';
+import { ArticlesPageSchema } from '@/pages/articles-page';
+import { ScrollSaveSchema } from '@/features/scroll-save';
+import { rtkApi } from '@/shared/api/rtk-api';
+import { ProfileSchema } from '@/features/editable-profile-card';
 
 export interface StateSchema {
   counter: CounterSchema;
