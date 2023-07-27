@@ -12,8 +12,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     buildLocales: '',
     locales: '',
   };
+
   config!.resolve!.modules!.push(paths.src);
   config!.resolve!.extensions!.push('ts', 'tsx');
+  config!.resolve!.alias = { '@': paths.src };
 
   const rules = config.module!.rules as RuleSetRule[];
 

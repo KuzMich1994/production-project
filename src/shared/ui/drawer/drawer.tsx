@@ -80,7 +80,7 @@ function DrawerContent(props: PropsWithChildren<DrawerProps>) {
 
   return (
     <Portal>
-      <div className={classNames(s.drawer, {}, [className, theme, 'app_drawer'])}>
+      <div className={classNames(s.drawer, {}, [className, theme, 'app-drawer'])}>
         <Overlay onClick={close} />
         <Spring.a.div
           className={s.sheet}

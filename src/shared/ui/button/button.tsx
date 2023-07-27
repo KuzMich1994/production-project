@@ -22,6 +22,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme;
   square?: boolean;
   buttonSize?: ButtonSize;
+  fullWidth?: boolean;
 }
 
 function Button(props: PropsWithChildren<ButtonProps>): JSX.Element {
@@ -31,12 +32,14 @@ function Button(props: PropsWithChildren<ButtonProps>): JSX.Element {
     theme = ButtonTheme.OUTLINE,
     square,
     buttonSize = ButtonSize.M,
+    fullWidth,
     ...otherProps
   } = props;
 
   const mods: Mods = {
     [s.square]: square,
     [s.disabled]: otherProps.disabled,
+    [s.fullWidth]: fullWidth,
   };
 
   return (

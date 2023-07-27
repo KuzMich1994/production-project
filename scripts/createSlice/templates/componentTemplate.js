@@ -2,7 +2,7 @@ const interfaceConst = 'interface';
 const toCamelCase = require('../toCamelCase');
 
 module
-  .exports = (componentName, componentNameKebab) => `import { classNames } from 'shared/lib/class-names/class-names';
+  .exports = (componentName, componentNameKebab) => `import { classNames } from '@/shared/lib/class-names/class-names';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import cls from './${componentNameKebab}.module.scss';
