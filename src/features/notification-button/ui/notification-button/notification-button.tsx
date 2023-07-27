@@ -4,9 +4,10 @@ import Icon from 'shared/ui/icon/icon';
 import NotificationsIcon from 'shared/assets/icons/notifications-20-20.svg';
 import { NotificationList } from 'entities/notification';
 import { Popover } from 'shared/ui/popups';
-import Drawer from 'shared/ui/drawer/drawer';
 import Button, { ButtonTheme } from 'shared/ui/button/button';
 import { BrowserView, MobileView } from 'react-device-detect';
+import Drawer from 'shared/ui/drawer/drawer';
+import { AnimationProvider } from 'shared/lib/components/animation-provider';
 import s from './notification-button.module.scss';
 
 interface NotificationButtonProps {
@@ -41,9 +42,11 @@ function NotificationButton(props: NotificationButtonProps) {
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer onClose={onToggleDrawer} isOpen={isOpen}>
-          <NotificationList />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer onClose={onToggleDrawer} isOpen={isOpen}>
+            <NotificationList />
+          </Drawer>
+        </AnimationProvider>
       </MobileView>
     </>
   );
