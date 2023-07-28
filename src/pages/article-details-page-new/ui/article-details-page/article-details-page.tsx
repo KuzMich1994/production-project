@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { ArticleDetails } from '@/entities/article';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
-import Page from '@/widgets/page/page';
+import { Page } from '@/widgets/page';
 import { VStack } from '@/shared/ui/stack';
 import { ArticleRecommendationsList } from '@/features/article-recommendations-list';
 import s from './article-details-page.module.scss';
