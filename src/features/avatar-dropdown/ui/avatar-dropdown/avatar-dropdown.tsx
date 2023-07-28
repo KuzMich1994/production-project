@@ -3,13 +3,13 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { Avatar } from '@/shared/ui/avatar/avatar';
-import { RoutePath } from '@/shared/config/route-config/route-config';
 import { Dropdown } from '@/shared/ui/popups';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/user';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import s from './avatar-dropdown.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
   className?: string;

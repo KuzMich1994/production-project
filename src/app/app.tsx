@@ -1,14 +1,14 @@
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { AppRouter } from '@/app/providers/router';
+import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/navbar';
 import { Sidebar } from '@/widgets/sidebar';
 import { getUserMounted, userActions } from '@/entities/user';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/use-app-dispatch';
-import { useTheme } from '@/app/providers/theme-provider';
+import { useTheme } from '@/shared/lib/hooks/use-theme/use-theme';
 
-function App(): JSX.Element {
+function App() {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const mounted = useSelector(getUserMounted);

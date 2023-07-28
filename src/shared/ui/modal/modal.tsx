@@ -1,10 +1,10 @@
 import React, { PropsWithChildren } from 'react';
 import { classNames, Mods } from '@/shared/lib/class-names/class-names';
-import { useTheme } from '@/app/providers/theme-provider';
 import Overlay from '../overlay/overlay';
 import { Portal } from '../portal/portal';
 import s from './modal.module.scss';
-import { useModal } from '../../lib/hooks/use-modal/use-modal';
+import { useModal } from '@/shared/lib/hooks/use-modal/use-modal';
+import { useTheme } from '@/shared/lib/hooks/use-theme/use-theme';
 
 interface ModalProps {
   className?: string;
@@ -15,7 +15,7 @@ interface ModalProps {
 
 export function Modal({
   className, children, isOpen, onClose, lazy,
-}: PropsWithChildren<ModalProps>): JSX.Element | null {
+}: PropsWithChildren<ModalProps>) {
   const { theme } = useTheme();
   const { isClosing, close, isMounted } = useModal({
     onClose, lazy, isOpen, animationDelay: 300,

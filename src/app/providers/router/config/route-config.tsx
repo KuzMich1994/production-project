@@ -1,47 +1,15 @@
-import { RouteProps } from 'react-router-dom';
 import { MainPage } from '@/pages/main-page';
-import { UserRole } from '@/entities/user';
 import { AboutPage } from '@/pages/about';
 import { ProfilePage } from '@/pages/profile-page';
 import { ArticlesPage } from '@/pages/articles-page';
+import { ArticleDetailsPageNew } from '@/pages/article-details-page-new';
 import { ArticleEditPage } from '@/pages/article-edit-page';
 import { AdminPanelPage } from '@/pages/admin-panel-page';
+import { UserRole } from '@/entities/user';
 import { ForbiddenPage } from '@/pages/forbidden-page';
 import { NotFoundPage } from '@/pages/not-found-page';
-import { ArticleDetailsPageNew } from '@/pages/article-details-page-new';
-
-export type AppRoutesProps = RouteProps & {
-  authOnly?: boolean;
-  roles?: UserRole[],
-}
-
-export enum AppRoutes {
-  MAIN = 'main',
-  ABOUT = 'about',
-  PROFILE = 'profile',
-  ARTICLES = 'articles',
-  ARTICLE_DETAILS = 'article_details',
-  ARTICLE_CREATE = 'article_create',
-  ARTICLE_EDIT = 'article_edit',
-  ADMIN_PANEL = 'admin_panel',
-  FORBIDDEN = 'forbidden',
-
-  // last
-  NOT_FOUND = 'not-found',
-}
-
-export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: '/',
-  [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile/',
-  [AppRoutes.ARTICLES]: '/articles',
-  [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
-  [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-  [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-  [AppRoutes.ADMIN_PANEL]: '/admin/',
-  [AppRoutes.FORBIDDEN]: '/forbidden/',
-  [AppRoutes.NOT_FOUND]: '*',
-};
+import { AppRoutes, RoutePath } from '@/shared/const/router';
+import { AppRoutesProps } from '@/shared/types/router';
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {

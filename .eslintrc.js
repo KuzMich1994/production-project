@@ -58,6 +58,13 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
     'kuzmich-plugin/path-checker': ['error', { alias: '@' }],
+    'kuzmich-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/store-provider', '**/testing'],
+      },
+    ],
     'kuzmich-plugin/public-api-imports': [
       'error',
       {

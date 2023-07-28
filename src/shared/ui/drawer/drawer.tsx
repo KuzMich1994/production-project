@@ -2,11 +2,11 @@ import {
   PropsWithChildren, useCallback, useEffect,
 } from 'react';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { useTheme } from '@/app/providers/theme-provider';
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/animation-provider';
 import Overlay from '../overlay/overlay';
 import s from './drawer.module.scss';
 import { Portal } from '../portal/portal';
+import { useTheme } from '@/shared/lib/hooks/use-theme/use-theme';
 
 interface DrawerProps {
   className?: string;

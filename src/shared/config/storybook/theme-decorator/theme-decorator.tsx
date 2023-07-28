@@ -1,5 +1,7 @@
 import { Story } from '@storybook/react';
-import { Theme, ThemeProvider } from '@/app/providers/theme-provider';
+// eslint-disable-next-line kuzmich-plugin/layer-imports
+import { ThemeProvider } from '@/app/providers/theme-provider';
+import { Theme } from '@/shared/const/theme';
 
 export function ThemeDecorator(theme: Theme) {
   return function (StoryComponent: Story) {
