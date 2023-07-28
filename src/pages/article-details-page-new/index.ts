@@ -1,4 +1,3 @@
-import { articleDetailsPageReducer } from './model/slice';
 import { ArticleDetailsPageAsync as ArticleDetailsPageNew } from './ui/article-details-page/article-details-page.async';
 import { ArticleDetailsCommentsSchema } from './model/types/article-details-comments-schema';
 import { ArticleDetailsRecommendationsSchema } from './model/types/article-details-recommendations-schema';
@@ -9,5 +8,4 @@ export {
   type ArticleDetailsCommentsSchema,
   type ArticleDetailsRecommendationsSchema,
   type ArticleDetailsPageSchema,
-  articleDetailsPageReducer,
 };

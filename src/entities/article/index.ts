@@ -8,7 +8,6 @@ import { Article } from './model/types/article';
 import { ArticleDetailsSchema } from './model/types/article-details-schema';
 import { getArticleDetailsData } from './model/selectors/article-details';
 import ArticleList from './ui/article-list/article-list';
-import { articleDetailsReducer } from './model/slice/article-details-slice';
 import ArticleTypeTabs from './ui/article-type-tabs/article-type-tabs';
 
 export {
@@ -23,6 +22,5 @@ export {
   ArticleSortSelector,
   ArticleType,
   ArticleBlockType,
-  articleDetailsReducer,
   ArticleTypeTabs,
 };

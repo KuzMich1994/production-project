@@ -58,7 +58,13 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
     'kuzmich-plugin/path-checker': ['error', { alias: '@' }],
-    'kuzmich-plugin/public-api-imports': ['error', { alias: '@' }],
+    'kuzmich-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilePatterns: ['**/*.test.*', '**/*.stories.*', '**/store-decorator.tsx'],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,
