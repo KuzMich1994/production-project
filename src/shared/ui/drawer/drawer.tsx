@@ -1,5 +1,5 @@
 import {
-  memo, PropsWithChildren, useCallback, useEffect,
+  PropsWithChildren, useCallback, useEffect,
 } from 'react';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { useTheme } from '@/app/providers/theme-provider';

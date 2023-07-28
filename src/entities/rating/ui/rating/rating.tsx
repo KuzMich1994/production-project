@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { classNames } from '@/shared/lib/class-names/class-names';
 import Card from '@/shared/ui/card/card';
 import { HStack, VStack } from '@/shared/ui/stack';
 import Text from '@/shared/ui/text/text';
