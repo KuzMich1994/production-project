@@ -9,7 +9,7 @@ interface SkeletonProps {
   border?: string;
 }
 
-function Skeleton(props: SkeletonProps): JSX.Element {
+export const Skeleton = memo((props: SkeletonProps) => {
   const {
     className,
     height,
@@ -29,6 +29,4 @@ function Skeleton(props: SkeletonProps): JSX.Element {
       className={classNames(s.skeleton, {}, [className])}
     />
   );
-}
-
-export default memo(Skeleton);
+});

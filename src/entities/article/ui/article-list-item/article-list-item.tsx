@@ -1,12 +1,12 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import Text from '@/shared/ui/text/text';
+import { Text } from '@/shared/ui/text';
 import ViewsIcon from '@/shared/assets/icons/eye-20-20.svg';
-import Icon from '@/shared/ui/icon/icon';
-import Card from '@/shared/ui/card/card';
-import { Avatar } from '@/shared/ui/avatar/avatar';
-import AppLink from '@/shared/ui/app-link/app-link';
+import { Icon } from '@/shared/ui/icon';
+import { Card } from '@/shared/ui/card';
+import { Avatar } from '@/shared/ui/avatar';
+import { AppLink } from '@/shared/ui/app-link';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import ArticleTextBlockComponent from '../article-text-block-component/article-text-block-component';
 import { Article, ArticleTextBlock } from '../../model/types/article';

@@ -12,7 +12,7 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value'
   readonly?: boolean;
 }
 
-function Input(props: InputProps): JSX.Element {
+export const Input = memo((props: InputProps) => {
   const {
     onChange,
     value,
@@ -95,6 +95,4 @@ function Input(props: InputProps): JSX.Element {
       </div>
     </div>
   );
-}
-
-export default memo(Input);
+});

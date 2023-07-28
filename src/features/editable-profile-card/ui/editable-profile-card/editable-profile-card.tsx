@@ -6,7 +6,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/use-initial-effect/use-init
 import { Currency } from '@/entities/currency';
 import { Country } from '@/entities/country';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import Text, { TextTheme } from '@/shared/ui/text/text';
+import { TextTheme, Text } from '@/shared/ui/text';
 import { ProfileCard } from '@/entities/profile';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { VStack } from '@/shared/ui/stack';

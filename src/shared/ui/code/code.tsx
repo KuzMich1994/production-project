@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import CopyIcon from '@/shared/assets/icons/copy-20-20.svg';
-import Button, { ButtonTheme } from '../button/button';
+import { Button, ButtonTheme } from '../button/button';
 import s from './code.module.scss';
 
 interface CodeProps {
@@ -9,7 +9,7 @@ interface CodeProps {
   text: string;
 }
 
-function Code({ className, text }: CodeProps): JSX.Element {
+export const Code = memo(({ className, text }: CodeProps) => {
   const onCopy = useCallback(() => {
     navigator.clipboard.writeText(text);
   }, [text]);
@@ -28,6 +28,4 @@ function Code({ className, text }: CodeProps): JSX.Element {
       </code>
     </pre>
   );
-}
-
-export default memo(Code);
+});

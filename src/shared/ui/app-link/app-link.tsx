@@ -14,18 +14,14 @@ interface AppLinkProps extends LinkProps{
   theme?: AppLinkTheme;
 }
 
-function AppLink({
+export const AppLink = memo(({
   className, children, to, theme = AppLinkTheme.PRIMARY, ...props
-}: PropsWithChildren<AppLinkProps>): JSX.Element {
-  return (
-    <Link
-      to={to}
-      className={classNames(s.appLink, {}, [className, s[theme]])}
-      {...props}
-    >
-      {children}
-    </Link>
-  );
-}
-
-export default memo(AppLink);
+}: PropsWithChildren<AppLinkProps>) => (
+  <Link
+    to={to}
+    className={classNames(s.appLink, {}, [className, s[theme]])}
+    {...props}
+  >
+    {children}
+  </Link>
+));

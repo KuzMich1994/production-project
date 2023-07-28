@@ -3,7 +3,7 @@ import { Fragment, memo, ReactNode } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { DropdownDirection } from '@/shared/types/ui';
-import AppLink from '../../../app-link/app-link';
+import { AppLink } from '../../../app-link/app-link';
 import s from './dropdown.module.scss';
 import popupCls from '../../styles/popup.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
@@ -21,7 +21,7 @@ interface DropdownProps {
   direction?: DropdownDirection;
 }
 
-function Dropdown(props: DropdownProps) {
+export const Dropdown = memo((props: DropdownProps) => {
   const {
     className,
     trigger,
@@ -68,6 +68,4 @@ function Dropdown(props: DropdownProps) {
       </Menu.Items>
     </Menu>
   );
-}
-
-export default memo(Dropdown);
+});

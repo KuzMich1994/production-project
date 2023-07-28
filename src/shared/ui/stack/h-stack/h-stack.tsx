@@ -1,12 +1,8 @@
 import { PropsWithChildren } from 'react';
-import Flex, { FlexProps } from '../flex/flex';
+import { FlexProps, Flex } from '../flex/flex';
 
 type HStackProps = Omit<PropsWithChildren<FlexProps>, 'direction'>
 
-function HStack(props: HStackProps): JSX.Element {
-  return (
-    <Flex direction="row" {...props} />
-  );
-}
-
-export default HStack;
+export const HStack = (props: HStackProps) => (
+  <Flex direction="row" {...props} />
+);

@@ -13,7 +13,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement>{
   fullWidth?: boolean;
 }
 
-function Card(props: PropsWithChildren<CardProps>): JSX.Element {
+export const Card = memo((props: PropsWithChildren<CardProps>) => {
   const {
     className,
     children,
@@ -30,6 +30,4 @@ function Card(props: PropsWithChildren<CardProps>): JSX.Element {
       {children}
     </div>
   );
-}
-
-export default memo(Card);
+});

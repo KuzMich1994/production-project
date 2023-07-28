@@ -12,7 +12,7 @@ interface PopoverProps {
   direction?: DropdownDirection;
 }
 
-function Popover(props: PropsWithChildren<PopoverProps>) {
+export const Popover = memo((props: PropsWithChildren<PopoverProps>) => {
   const {
     className, trigger, direction = 'bottom right', children,
   } = props;
@@ -31,6 +31,4 @@ function Popover(props: PropsWithChildren<PopoverProps>) {
       </HPopover.Panel>
     </HPopover>
   );
-}
-
-export default memo(Popover);
+});

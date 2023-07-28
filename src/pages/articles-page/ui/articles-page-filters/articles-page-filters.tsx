@@ -6,8 +6,8 @@ import {
 } from '@/entities/article';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/use-app-dispatch';
-import Card from '@/shared/ui/card/card';
-import Input from '@/shared/ui/input/input';
+import { Card } from '@/shared/ui/card';
+import { Input } from '@/shared/ui/input';
 import { SortOrder } from '@/shared/types';
 import { useDebounce } from '@/shared/lib/hooks/use-debounce/use-debounce';
 import { fetchArticleList } from '../../model/services/fetch-article-list/fetch-article-list';

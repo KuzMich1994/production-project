@@ -42,7 +42,7 @@ const gapClasses: Record<FlexGap, string> = {
   32: s.gap32,
 };
 
-function Flex(props: PropsWithChildren<FlexProps>): JSX.Element {
+export const Flex = (props: PropsWithChildren<FlexProps>) => {
   const {
     className,
     children,
@@ -70,6 +70,4 @@ function Flex(props: PropsWithChildren<FlexProps>): JSX.Element {
       {children}
     </div>
   );
-}
-
-export default Flex;
+};

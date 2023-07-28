@@ -3,7 +3,7 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { DropdownDirection } from '@/shared/types/ui';
-import Button from '../../../button/button';
+import { Button } from '../../../button/button';
 import s from './list-box.module.scss';
 import popupCls from '../../styles/popup.module.scss';
 import { HStack } from '../../../stack';
@@ -26,7 +26,7 @@ interface ListBoxProps {
   label?: string;
 }
 
-function ListBox(props: ListBoxProps) {
+export const ListBox = memo((props: ListBoxProps) => {
   const {
     items,
     className,
@@ -85,6 +85,4 @@ function ListBox(props: ListBoxProps) {
       </HListBox>
     </HStack>
   );
-}
-
-export default memo(ListBox);
+});

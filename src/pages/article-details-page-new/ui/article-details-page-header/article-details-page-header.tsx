@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Button, { ButtonTheme } from '@/shared/ui/button/button';
+import { ButtonTheme, Button } from '@/shared/ui/button';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { getArticleDetailsData } from '@/entities/article';
 import { HStack } from '@/shared/ui/stack';

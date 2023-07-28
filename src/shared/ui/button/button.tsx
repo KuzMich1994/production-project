@@ -25,7 +25,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-function Button(props: PropsWithChildren<ButtonProps>): JSX.Element {
+export const Button = memo((props: PropsWithChildren<ButtonProps>) => {
   const {
     className,
     children,
@@ -51,6 +51,4 @@ function Button(props: PropsWithChildren<ButtonProps>): JSX.Element {
       {children}
     </button>
   );
-}
-
-export default memo(Button);
+});

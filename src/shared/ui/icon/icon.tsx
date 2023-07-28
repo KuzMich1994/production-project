@@ -8,7 +8,7 @@ interface IconProps extends SVGProps<SVGSVGElement> {
   inverted?: boolean;
 }
 
-function Icon(props: IconProps) {
+export const Icon = memo((props: IconProps) => {
   const {
     className,
     Svg,
@@ -22,6 +22,4 @@ function Icon(props: IconProps) {
       {...otherProps}
     />
   );
-}
-
-export default memo(Icon);
+});

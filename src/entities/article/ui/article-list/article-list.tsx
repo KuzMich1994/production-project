@@ -1,7 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { useTranslation } from 'react-i18next';
-import Text, { TextSize } from '@/shared/ui/text/text';
+import { TextSize, Text } from '@/shared/ui/text';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { ArticleView } from '../../model/consts/consts';
 import ArticleListItemSkeleton from '../article-list-item/article-list-item-skeleton';

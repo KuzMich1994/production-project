@@ -1,7 +1,7 @@
 import { ReactNode, useCallback } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import Card, { CardTheme } from '../card/card';
+import { Card, CardTheme } from '../card/card';
 import s from './tabs.module.scss';
 
 export interface TabItem<T extends string> {
@@ -16,7 +16,7 @@ interface TabsProps<T extends string> {
   onTabClick: (tab: TabItem<T>) => void;
 }
 
-function Tabs<T extends string>(props: TabsProps<T>): JSX.Element {
+export function Tabs<T extends string>(props: TabsProps<T>) {
   const {
     className,
     tabs,
@@ -45,5 +45,3 @@ function Tabs<T extends string>(props: TabsProps<T>): JSX.Element {
     </div>
   );
 }
-
-export default Tabs;

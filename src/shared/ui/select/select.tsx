@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, memo, useMemo } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames, Mods } from '@/shared/lib/class-names/class-names';
 import s from './select.module.scss';
@@ -18,7 +18,7 @@ interface SelectProps<T extends string> {
   readonly?: boolean;
 }
 
-function Select<T extends string>(props: SelectProps<T>): JSX.Element {
+function SelectWithoutMemo<T extends string>(props: SelectProps<T>) {
   const {
     className,
     label,
@@ -63,4 +63,4 @@ function Select<T extends string>(props: SelectProps<T>): JSX.Element {
   );
 }
 
-export default Select;
+export const Select = memo(SelectWithoutMemo);

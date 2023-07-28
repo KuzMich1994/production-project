@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react';
-import Flex, { FlexProps } from '../flex/flex';
+import { FlexProps, Flex } from '../flex/flex';
 
 type VStackProps = Omit<PropsWithChildren<FlexProps>, 'direction'>
 
-function VStack(props: VStackProps): JSX.Element {
+export const VStack = (props: VStackProps) => {
   const {
     align = 'start',
   } = props;
@@ -11,6 +11,4 @@ function VStack(props: VStackProps): JSX.Element {
   return (
     <Flex {...props} direction="column" align={align} />
   );
-}
-
-export default VStack;
+};

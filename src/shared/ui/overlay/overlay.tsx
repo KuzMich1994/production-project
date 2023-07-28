@@ -7,12 +7,10 @@ interface OverlayProps {
   onClick?: () => void;
 }
 
-function Overlay(props: OverlayProps): JSX.Element {
+export const Overlay = memo((props: OverlayProps) => {
   const { className, onClick } = props;
 
   return (
     <div onClick={onClick} className={classNames(s.overlay, {}, [className])} />
   );
-}
-
-export default memo(Overlay);
+});

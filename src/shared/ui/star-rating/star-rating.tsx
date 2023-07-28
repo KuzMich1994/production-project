@@ -13,7 +13,7 @@ interface StarRatingProps {
 
 const stars = [1, 2, 3, 4, 5];
 
-function StarRating(props: StarRatingProps) {
+export const StarRating = memo((props: StarRatingProps) => {
   const {
     className,
     selectedStars = 0,
@@ -69,6 +69,4 @@ function StarRating(props: StarRatingProps) {
       }
     </div>
   );
-}
-
-export default memo(StarRating);
+});
