@@ -19,6 +19,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'kuzmich-plugin',
+    'unused-imports',
   ],
   rules: {
     indent: [2, 2, {
@@ -26,6 +27,7 @@ module.exports = {
     }],
     'react/jsx-indent': [2, 2],
     'react/react-in-jsx-scope': 'off',
+    'unused-imports/no-unused-imports': 'error',
     'no-undef': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
