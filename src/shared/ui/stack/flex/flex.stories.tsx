@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Flex from './flex';
+import { Flex } from './flex';
 
 export default {
   title: 'shared/ui/Flex',

@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ThemeDecorator } from '@/shared/config/storybook/theme-decorator/theme-decorator';
 import ThemeSwitcher from './theme-switcher';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'widget/theme-switcher',

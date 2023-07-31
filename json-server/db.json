@@ -1083,6 +1083,12 @@
       "userId": "1",
       "text": "sdgsdg",
       "id": "InunPwE"
+    },
+    {
+      "articleId": "6",
+      "userId": "1",
+      "text": "фыыыыыыы",
+      "id": "8Jx202W"
     }
   ],
   "users": [
@@ -1119,7 +1125,7 @@
       "id": "1",
       "first": "Сергей",
       "lastName": "Кузьмичев",
-      "age": "28",
+      "age": 29,
       "currency": "RUB",
       "country": "Russia",
       "city": "Dmitrov city vse socity",
@@ -1186,6 +1192,13 @@
       "feedback": "GOVNO",
       "userId": "1",
       "id": "xRdUXr7"
+    },
+    {
+      "rate": 3,
+      "articleId": "6",
+      "feedback": "среднячек",
+      "userId": "1",
+      "id": "oVnR2my"
     }
   ],
   "profile-ratings": [

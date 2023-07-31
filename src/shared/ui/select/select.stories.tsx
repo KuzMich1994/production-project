@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Select from './select';
+import { Select } from './select';
 
 export default {
   title: 'shared/ui/avatar',

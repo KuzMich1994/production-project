@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ThemeDecorator } from '@/shared/config/storybook/theme-decorator/theme-decorator';
-import Input from './input';
+import { Input } from './input';
 import { Theme } from '@/shared/const/theme';
 
 export default {

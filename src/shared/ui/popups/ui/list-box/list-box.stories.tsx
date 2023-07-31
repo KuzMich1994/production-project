@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ListBox from './list-box';
+import { ListBox } from './list-box';
 
 export default {
   title: 'shared/ui/ListBox',

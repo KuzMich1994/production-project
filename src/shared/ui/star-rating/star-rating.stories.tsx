@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import StarRating from './star-rating';
+import { StarRating } from './star-rating';
 
 export default {
   title: 'shared/ui/StarRating',
