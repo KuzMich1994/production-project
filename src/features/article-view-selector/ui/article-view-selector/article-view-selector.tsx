@@ -5,8 +5,8 @@ import TileIcon from '@/shared/assets/icons/tile.svg';
 import ListIcon from '@/shared/assets/icons/list.svg';
 import { ButtonTheme, Button } from '@/shared/ui/button';
 import { Icon } from '@/shared/ui/icon';
-import { ArticleView } from '../../model/consts/consts';
 import s from './article-view-selector.module.scss';
+import { ArticleView } from '@/entities/article';
 
 interface ArticleViewSelectorProps {
   className?: string;
