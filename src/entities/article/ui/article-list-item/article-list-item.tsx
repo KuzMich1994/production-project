@@ -11,6 +11,8 @@ import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import ArticleTextBlockComponent from '../article-text-block-component/article-text-block-component';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import s from './article-list-item.module.scss';
+import { AppImage } from '@/shared/ui/app-image';
+import { Skeleton } from '@/shared/ui/skeleton';
 
 interface ArticleListItemProps {
   className?: string;
@@ -52,7 +54,12 @@ function ArticleListItem(props: ArticleListItemProps): JSX.Element {
           </div>
           <Text title={article.title} className={s.title} />
           {types}
-          <img src={article.img} alt={article.title} className={s.img} />
+          <AppImage
+            fallback={<Skeleton width="100%" height={250} />}
+            src={article.img}
+            alt={article.title}
+            className={s.img}
+          />
           {
             textBlock && (
               <ArticleTextBlockComponent block={textBlock} className={s.textBlock} />
@@ -83,7 +90,12 @@ function ArticleListItem(props: ArticleListItemProps): JSX.Element {
         role="button"
       >
         <div className={s.imgContainer}>
-          <img src={article.img} alt={article.title} className={s.img} />
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
+            src={article.img}
+            alt={article.title}
+            className={s.img}
+          />
           <Text text={article.createdAt} className={s.date} />
         </div>
         <div className={s.infoContainer}>
