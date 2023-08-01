@@ -33,6 +33,7 @@ export default {
   moduleNameMapper: {
     '\\.(scss|png|jpg|jpeg)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jest-empty-component.tsx'),
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   globals: {
     __IS_DEV__: true,
