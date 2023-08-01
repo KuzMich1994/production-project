@@ -11,7 +11,7 @@ import { HStack } from '@/shared/ui/stack';
 import { NotificationButton } from '@/features/notification-button';
 import { AvatarDropdown } from '@/features/avatar-dropdown';
 import s from './navbar.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleNew } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string;
@@ -40,7 +40,7 @@ function Navbar({ className }: NavbarProps): JSX.Element {
         />
         <HStack gap="16" max justify="between" align="center" className={s.navbar__links}>
           <AppLink
-            to={RoutePath.article_create}
+            to={getRouteArticleNew()}
             theme={AppLinkTheme.PRIMARY_INVERTED}
           >
             {t('Создать статью')}

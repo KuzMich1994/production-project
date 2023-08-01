@@ -9,7 +9,7 @@ import {
 } from '@/entities/user';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import s from './avatar-dropdown.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
   className?: string;
@@ -40,11 +40,11 @@ function AvatarDropdown({ className }: AvatarDropdownProps) {
       items={[
         ...(isAdminPanelAvailable ? [{
           content: t('Админка'),
-          href: RoutePath.admin_panel,
+          href: getRouteAdminPanel(),
         }] : []),
         {
           content: t('Профиль'),
-          href: `${RoutePath.profile}${authData.id}`,
+          href: getRouteProfile(authData.id),
         },
         {
           content: t('Выйти'),

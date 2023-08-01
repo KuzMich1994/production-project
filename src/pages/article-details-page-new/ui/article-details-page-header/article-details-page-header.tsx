@@ -7,7 +7,7 @@ import { classNames } from '@/shared/lib/class-names/class-names';
 import { getArticleDetailsData } from '@/entities/article';
 import { HStack } from '@/shared/ui/stack';
 import { getCanEditArticle } from '../../model/selectors/article';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -22,11 +22,11 @@ function ArticleDetailsPageHeader(props: ArticleDetailsPageHeaderProps): JSX.Ele
   const article = useSelector(getArticleDetailsData);
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
+    navigate(getRouteArticles());
   }, [navigate]);
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article?.id}/edit`);
+    navigate(getRouteArticleEdit(article?.id));
   }, [article?.id, navigate]);
 
   return (
