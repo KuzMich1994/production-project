@@ -47,7 +47,7 @@ const getNestedPaths = (nestedDirectories: Directory[]) => {
 };
 
 componentsDirs?.forEach((directory) => {
-  const indexFilePath = `${directory.getPath()}/index.ts`;
+  const indexFilePath = `${directory.getPath()}/sort.ts`;
   const indexFile = directory.getSourceFile(indexFilePath);
   const directories = directory.getDirectories();
   const sourceCode = directories.length ? getNestedPaths(directories) : `export * from './${directory.getBaseName()}';

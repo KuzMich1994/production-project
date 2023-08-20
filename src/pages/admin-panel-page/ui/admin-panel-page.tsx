@@ -11,7 +11,7 @@ function AdminPanelPage({ className }: AdminPanelPageProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Page className={classNames('', {}, [className])}>
+    <Page data-testid="admin-panel-page" className={classNames('', {}, [className])}>
       {t('Админ панель')}
     </Page>
   );

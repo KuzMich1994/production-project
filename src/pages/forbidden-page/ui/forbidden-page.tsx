@@ -11,7 +11,7 @@ function ForbiddenPage({ className }: ForbiddenPageProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Page className={classNames('', {}, [className])}>
+    <Page data-testid="forbidden-page" className={classNames('', {}, [className])}>
       {t('У вас нет доступа к этой странице')}
     </Page>
   );

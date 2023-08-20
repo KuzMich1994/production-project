@@ -11,8 +11,9 @@ import { getScrollPositionByPath, scrollSaveActions } from '@/features/scroll-sa
 import { StateSchema } from '@/app/providers/store-provider';
 import { useThrottle } from '@/shared/lib/hooks/use-throttle/use-throttle';
 import s from './page.module.scss';
+import { TestProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string;
   onScrollEnd?: () => void;
 }
@@ -22,6 +23,7 @@ function Page(props: PropsWithChildren<PageProps>): JSX.Element {
     className,
     children,
     onScrollEnd,
+    'data-testid': dataTestid,
   } = props;
 
   const dispatch = useAppDispatch();
@@ -48,6 +50,7 @@ function Page(props: PropsWithChildren<PageProps>): JSX.Element {
 
   return (
     <main
+      data-testid={dataTestid ?? 'page'}
       ref={containerRef}
       className={classNames(s.page, {}, [className])}
       onScroll={onScroll}

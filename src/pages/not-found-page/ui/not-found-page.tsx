@@ -11,7 +11,7 @@ export function NotFoundPage({ className }: NotFoundPageProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Page className={classNames(s.notFoundPage, {}, [className])}>
+    <Page data-testid="not-found-page" className={classNames(s.notFoundPage, {}, [className])}>
       {t('Страница не найдена')}
     </Page>
   );

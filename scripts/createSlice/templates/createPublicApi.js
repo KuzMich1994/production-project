@@ -10,7 +10,7 @@ module.exports = async (layer, sliceName) => {
 
   try {
     await fs.writeFile(
-      resolveRoot('src', layer, sliceName, 'index.ts'),
+      resolveRoot('src', layer, sliceName, 'sort.ts'),
       `import ${componentName} from './ui/${componentNameKebab}/${componentNameKebab}';
 import { ${firstCharUpperCase(toCamelCase(schemaName))} } from './model/types/${schemaName}';
 

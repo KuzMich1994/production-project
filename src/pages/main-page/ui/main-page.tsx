@@ -6,7 +6,7 @@ function MainPage(): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Page>
+    <Page data-testid="main-page">
       <Counter />
       <h1>{t('Главная страница')}</h1>
     </Page>

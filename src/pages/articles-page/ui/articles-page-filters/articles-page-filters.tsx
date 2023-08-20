@@ -1,21 +1,20 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import {
-  ArticleSortField, ArticleView, ArticleType,
-} from '@/entities/article';
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/article';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-dispatch/use-app-dispatch';
 import { Card } from '@/shared/ui/card';
 import { Input } from '@/shared/ui/input';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/use-debounce/use-debounce';
 import { fetchArticleList } from '../../model/services/fetch-article-list/fetch-article-list';
 import { articlesPageActions } from '../../model/slices/articles-page-slice';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
-  getArticlesPageSort, getArticlesPageType,
+  getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView,
 } from '../../model/selectors/articles-page-selectors';
 import s from './articles-page-filters.module.scss';
